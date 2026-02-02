@@ -1,0 +1,83 @@
+* {
+    border: none;
+    border-radius: 10;
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-size: 12px;
+
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+tooltip {
+    background: #121212;
+}
+tooltip label {
+    color: #00bfff;
+}
+
+#workspaces {
+    background: #121212;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: #00bfff;
+}
+
+/*#workspaces button.active {
+    color: #121212;
+    background: #00bfff;
+}*/
+
+#clock {
+    color: #00bfff;
+    font-weight: bold;
+    padding: 0 7px;
+    background: #121212;
+}
+
+#battery {
+    background-color: #121212;
+    color: #00bfff;
+    padding: 0 5px;
+    margin: 0 5px;
+}
+
+#pulseaudio {
+    background-color: #121212;
+    color: #00bfff;
+    padding: 0 5px;
+    margin: 0 5px;
+}
+
+#network {
+    background-color: #121212;
+    color: #00bfff;
+    padding: 0 5px;
+    margin: 0 5px;
+}
+
+#bluetooth {
+    background-color: #121212;
+    color: #00bfff;
+    padding: 0 5px;
+    margin: 0 5px;
+}
+
+#custom-launcher {
+    background-color: #121212;
+    color: #00bfff;
+    padding: 0 5px;
+    margin: 0 5px;
+
+    font-size: 15px;
+}
+
+
+

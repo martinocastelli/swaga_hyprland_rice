@@ -1,0 +1,50 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+      "type": "auto",
+      "source": "arch_small"
+    },
+    "display": {
+        "separator": "  ",
+        "color": "white",
+        "constants": ["\u001b[37m", "\u001b[31m", "\u001b[32m", "\u001b[33m", "\u001b[34m", "\u001b[35m"]
+    },
+    "modules": [
+        {
+            "type": "custom",
+            "key": "╭───────────────────────────────────╮"
+        },
+        {
+            "type": "custom",
+            "key": "│{$2} My hyprland rice               󰣇 {$1} │"
+        },
+        {
+            "type": "command",
+            "key": "│{$3}   user  ",
+            "text": "echo $USER",
+            "format": "{$3}{>22}{$1} │"
+        },
+        {
+            "type": "command",
+            "key": "│{$4}   uptime",
+            "text": "uptime -p | cut -d ' ' -f 2-",
+            "format": "{$4}{>22} {$1}│"
+        },
+        {
+            "type": "command",
+            "key": "│{$5}   mem   ",
+            "text": "free -m | awk 'NR==2{printf \"%.2f GiB / %.2f GiB\",$3/1024,$2/1024}'",
+            "format": "{$5}{>22} {$1}│"
+        },
+        {
+            "type": "packages",
+            "key": "│{$6}   pkgs  ",
+            "format": "{$6}{all>22} {$1}│"
+        },
+        {
+            "type": "custom",
+            "key": "╰───────────────────────────────────╯"
+        },
+        "break"
+    ]
+}
