@@ -14,7 +14,7 @@ alias grep='grep --color=auto'
 alias tree='eza -lh --total-size --group-directories-first -T'
 alias trash='mv -t ~/.trash'
 
-PS1="\[\e[36m\]\w\[\e[m\]\\$ "
+PS1="\[\e[34m\]\w\[\e[m\]\\$ "
 
 echo -ne "\033[31m"
 figlet arch -f Sub-Zero

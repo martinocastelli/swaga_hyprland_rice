@@ -1,6 +1,6 @@
 * {
     border: none;
-    border-radius: 10;
+    border-radius: 20;
     font-family: "JetBrainsMono Nerd Font Propo";
     font-size: 12px;
 
@@ -22,6 +22,7 @@ tooltip label {
 
 #workspaces {
     background: #121212;
+    border: 1px solid #00bfff;
 }
 
 #workspaces button {
@@ -30,40 +31,13 @@ tooltip label {
     color: #00bfff;
 }
 
-/*#workspaces button.active {
-    color: #121212;
-    background: #00bfff;
-}*/
-
+#cava,
+#battery,
+#pulseaudio,
+#backlight,
+#network,
+#bluetooth,
 #clock {
-    color: #00bfff;
-    font-weight: bold;
-    padding: 0 7px;
-    background: #121212;
-}
-
-#battery {
-    background-color: #121212;
-    color: #00bfff;
-    padding: 0 5px;
-    margin: 0 5px;
-}
-
-#pulseaudio {
-    background-color: #121212;
-    color: #00bfff;
-    padding: 0 5px;
-    margin: 0 5px;
-}
-
-#network {
-    background-color: #121212;
-    color: #00bfff;
-    padding: 0 5px;
-    margin: 0 5px;
-}
-
-#bluetooth {
     background-color: #121212;
     color: #00bfff;
     padding: 0 5px;
@@ -75,8 +49,9 @@ tooltip label {
     color: #00bfff;
     padding: 0 5px;
     margin: 0 5px;
+    border: 1px solid #00bfff;
 
-    font-size: 15px;
+    font-size: 20px;
 }
 
 
