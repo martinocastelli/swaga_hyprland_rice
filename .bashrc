@@ -13,6 +13,7 @@ alias clr_logo_dir='clear;fastfetch;eza -laih --total-size --group-directories-f
 alias grep='grep --color=auto'
 alias tree='eza -lh --total-size --group-directories-first -T'
 alias trash='mv -t ~/.trash'
+alias matrix='neo -D --charset=ascii'
 
 PS1="\[\e[34m\]\w\[\e[m\]\\$ "
 
