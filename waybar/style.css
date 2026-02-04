@@ -31,10 +31,11 @@ tooltip label {
     color: #00bfff;
 }
 
+#audio,
 #cava,
-#battery,
 #pulseaudio,
-#backlight,
+#battery,
+#backlight
 #network,
 #bluetooth,
 #clock {
