@@ -32,8 +32,6 @@ tooltip label {
 }
 
 #audio,
-#cava,
-#pulseaudio,
 #battery,
 #backlight,
 #network,
@@ -43,6 +41,14 @@ tooltip label {
     color: #00bfff;
     padding: 0 5px;
     margin: 0 5px;
+}
+
+#cava,
+#pulseaudioi {
+	background-color: #121212;
+	color: #00bfff;
+	padding: 0 5px;
+	margin: 0 5px;
 }
 
 #custom-launcher {
