@@ -1,9 +1,16 @@
-#
-# ~/.bashrc
-#
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt autocd
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/martino/.zshrc'
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
 
 alias ls='eza'
 alias ll='eza -lh --total-size --group-directories-first'
@@ -14,14 +21,9 @@ alias grep='grep --color=auto'
 alias tree='eza -lh --total-size --group-directories-first -T'
 alias trash='mv -t ~/.trash'
 alias matrix='neo -D --charset=ascii'
+
+PS1="%{$(tput setaf 9)%}%(?..%? )%{$(tput setaf 12)%}%2~%{$(tput setaf 13)%}$ "
  
-function nonzero_return() {
-	RETVAL=$?
-	[ $RETVAL -ne 0 ] && echo "$RETVAL "
-}
-
-PS1="\[\e[31m\]\`nonzero_return\`\[\e[m\]\[\e[34m\]\w\[\e[m\]\[\e[35m\]\\$\[\e[m\] "
-
 echo -ne "\033[31m"
 figlet arch -f Sub-Zero
 echo -ne "\033[0m"
