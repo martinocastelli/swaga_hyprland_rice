@@ -28,3 +28,4 @@ echo -ne "\033[31m"
 figlet arch -f Sub-Zero
 echo -ne "\033[0m"
 fastfetch
+
