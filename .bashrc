@@ -14,7 +14,9 @@ alias grep='grep --color=auto'
 alias tree='eza -lh --total-size --group-directories-first -T'
 alias trash='mv -t ~/.trash'
 alias matrix='neo -D --charset=ascii'
- 
+alias minilogo='env PF_INFO="ascii" pfetch'
+alias open='xdg-open'
+
 function nonzero_return() {
 	RETVAL=$?
 	[ $RETVAL -ne 0 ] && echo "$RETVAL "
