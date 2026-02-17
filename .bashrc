@@ -13,7 +13,7 @@ alias clr_logo_dir='clear;fastfetch;eza -laih --total-size --group-directories-f
 alias grep='grep --color=auto'
 alias tree='eza -lh --total-size --group-directories-first -T'
 alias trash='mv -t ~/.trash'
-alias matrix='neo -D --charset=ascii'
+alias matrix='neo-matrix -D --charset=ascii'
 alias minilogo='env PF_INFO="ascii" pfetch'
 alias open='xdg-open'
 
