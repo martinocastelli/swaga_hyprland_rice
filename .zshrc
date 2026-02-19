@@ -29,3 +29,5 @@ figlet arch -f Sub-Zero
 echo -ne "\033[0m"
 fastfetch
 
+
+. "$HOME/.local/bin/env"

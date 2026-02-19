@@ -6,6 +6,7 @@ set number
 set relativenumber
 set mouse=a
 colorscheme default
+set list lcs=tab:\|\   
 
 syntax on
 

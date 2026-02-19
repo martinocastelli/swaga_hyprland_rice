@@ -15,6 +15,7 @@ alias tree='eza -lh --total-size --group-directories-first -T'
 alias trash='mv -t ~/.trash'
 alias matrix='neo-matrix -D --charset=ascii'
 alias minilogo='env PF_INFO="ascii" pfetch'
+alias zen='zen-browser'
 alias open='xdg-open'
 
 function nonzero_return() {
@@ -28,3 +29,5 @@ echo -ne "\033[31m"
 figlet arch -f Sub-Zero
 echo -ne "\033[0m"
 fastfetch
+
+. "$HOME/.local/bin/env"
