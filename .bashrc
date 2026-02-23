@@ -5,6 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+alias cd='z'
 alias ls='eza'
 alias ll='eza -lh --total-size --group-directories-first'
 alias la='eza -a'
@@ -17,6 +18,14 @@ alias matrix='neo-matrix -D --charset=ascii'
 alias minilogo='env PF_INFO="ascii" pfetch'
 alias zen='zen-browser'
 alias open='xdg-open'
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
 
 function nonzero_return() {
 	RETVAL=$?
@@ -31,3 +40,5 @@ echo -ne "\033[0m"
 fastfetch
 
 . "$HOME/.local/bin/env"
+
+eval "$(zoxide init bash)"
