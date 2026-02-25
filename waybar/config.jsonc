@@ -1,124 +1,124 @@
-    {
-    "layer": "top",
-    "position": "top",
-    "margin-top": 8,
-    "width": 1570, //screen witdh divided by scaling factor
-    "modules-left": [
-        "custom/launcher",
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-        "clock"
-    ],
-    "modules-right": [
+{
+	"layer": "top",
+	"position": "top",
+	"margin-top": 8,
+	"width": 1570, //screen witdh divided by scaling factor
+	"modules-left": [
+		"custom/launcher",
+		"hyprland/workspaces"
+	],
+	"modules-center": [
+		"clock"
+	],
+	"modules-right": [
 		"custom/dropbox",
-        "group/audio",
-        "bluetooth",
-        "backlight",
-        "network",
-        "battery"
-    ],
-    "group/audio": {
-        "orientation": "horizontal",
-        "modules": [
-            "cava",
-            "pulseaudio"
-        ]
-    },
-    //////////////////////////////////////////////////////////////////
-    "custom/launcher": {
-        "format": "󰣇",
-        "on-click": "rofi -show drun",
-        "tooltip": false
-    },
-    "hyprland/workspaces": {
-        "format": "{icon}",
-        "format-active": "",
-        "on-click": "activate",
-        "format-icons": {
-            "default": "",
-            "active": ""
-        },
-        "persistent-workspaces": {
-            "*": 5
-        },
-        "sort-by-number": true
-    },
-    //////////////////////////////////////////////////////////////////
-    "clock": {
-        "format": "{:%H:%M, %d.%m.%Y}"
-    },
-    //////////////////////////////////////////////////////////////////
-    "custom/dropbox": {
+		"group/audio",
+		"bluetooth",
+		"backlight",
+		"network",
+		"battery"
+	],
+	"group/audio": {
+		"orientation": "horizontal",
+		"modules": [
+			"cava",
+			"pulseaudio"
+		]
+	},
+	//////////////////////////////////////////////////////////////////
+	"custom/launcher": {
+		"format": "󰣇",
+		"on-click": "rofi -show drun",
+		"tooltip": false
+	},
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"format-active": "",
+		"on-click": "activate",
+		"format-icons": {
+			"default": "",
+			"active": ""
+		},
+		"persistent-workspaces": {
+			"*": 5
+		},
+		"sort-by-number": true
+	},
+	//////////////////////////////////////////////////////////////////
+	"clock": {
+		"format": "{:%H:%M, %d.%m.%Y}"
+	},
+	//////////////////////////////////////////////////////////////////
+	"custom/dropbox": {
 		"exec": "/home/martino/.config/waybar/check_dropbox.sh",
 		"format": "{text}",
 		"return-type": "json",
 		"interval": 10
 	},
 	"cava": {
-        "autosens": 1,
-        "sensitivity": 2,
-        "bars": 14,
-        "lower_cutoff_freq": 50,
-        "higher_cutoff_freq": 10000,
-        "hide_on_silence": true,
-        "sleep_timer": 1,
-        "method": "pulse",
-        "source": "auto",
-        "stereo": false,
-        "reverse": false,
-        "bar_delimiter": 0,
-        "monstercat": false,
-        "waves": false,
-        "noise_reduction": 0.77,
-        "input_delay": 2,
-        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ]
-    },
-    "pulseaudio": {
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon} ",
-        "format-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "headset": "󰋎",
-            "phone": "",
-            "phone-muted": "",
-            "portable": "",
-            "car": "",
-            "default": ["", ""]
-        },
-        "scroll-step": 1,
-        "ignored-sinks": ["Easy Effects Sink"]
-    },
-    "bluetooth": {
-        "format": "",
-        "format-on": " on",
-        "format-disabled": "", // an empty format will hide the module
-        "format-connected": "󰂱 {device_alias}",
-        "tooltip-format": "",
-        "on-click": "kitty bluetui"
-    },
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
-    },
-    "network": {
-        "on-click": "kitty iwctl",
-        "interface": "wlan0",
-        "format": "{ifname}",
-        "format-wifi": "{essid} ",
-        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-        "format-disconnected": "offline", //An empty format will hide the module.
-        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-        "tooltip-format-ethernet": "{ifname} ",
-        "tooltip-format-disconnected": "Disconnected",
-        "max-length": 50
-    },
-    "battery": {
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% {icon} ",
-        "format-icons": ["", "", "", "", ""]
-    }
+		"autosens": 1,
+		"sensitivity": 2,
+		"bars": 14,
+		"lower_cutoff_freq": 50,
+		"higher_cutoff_freq": 10000,
+		"hide_on_silence": false,
+		"sleep_timer": 1,
+		"method": "pulse",
+		"source": "auto",
+		"stereo": false,
+		"reverse": false,
+		"bar_delimiter": 0,
+		"monstercat": false,
+		"waves": false,
+		"noise_reduction": 0.77,
+		"input_delay": 2,
+		"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ]
+	},
+	"pulseaudio": {
+		"format": "{volume}% {icon}",
+		"format-bluetooth": "{volume}% {icon} ",
+		"format-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"headset": "󰋎",
+			"phone": "",
+			"phone-muted": "",
+			"portable": "",
+			"car": "",
+			"default": ["", ""]
+		},
+		"scroll-step": 1,
+		"ignored-sinks": ["Easy Effects Sink"]
+	},
+	"bluetooth": {
+		"format": "",
+		"format-on": " on",
+		"format-disabled": "", // an empty format will hide the module
+		"format-connected": "󰂱 {device_alias}",
+		"tooltip-format": "",
+		"on-click": "kitty bluetui"
+	},
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "{percent}% {icon}",
+		"format-icons": ["", ""]
+	},
+	"network": {
+		"on-click": "kitty iwctl",
+		"interface": "wlan0",
+		"format": "{ifname}",
+		"format-wifi": "{essid} ",
+		"format-ethernet": "{ipaddr}/{cidr} 󰊗",
+		"format-disconnected": "offline", //An empty format will hide the module.
+		"tooltip-format": "{ifname} via {gwaddr} 󰊗",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+		"tooltip-format-ethernet": "{ifname} ",
+		"tooltip-format-disconnected": "Disconnected",
+		"max-length": 50
+	},
+	"battery": {
+		"format": "{capacity}% {icon}",
+		"format-charging": "{capacity}% {icon} ",
+		"format-icons": ["", "", "", "", ""]
+	}
 }

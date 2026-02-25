@@ -23,6 +23,7 @@ Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-surround'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
@@ -33,3 +34,4 @@ autocmd FileType c setlocal commentstring=//\ %s
 
 let g:airline_theme='deus'
 
+let g:indentLine_char = '|'
