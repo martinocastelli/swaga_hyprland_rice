@@ -1,0 +1,14 @@
+
+new_tab
+layout splits
+enabled_layouts splits
+set_layout_state {"pairs": {"bias": 0.5756213643574835, "one": 1, "two": {"horizontal": false, "bias": 0.21428571428571402, "one": {"bias": 0.23823373876255977, "one": 2, "two": 5}, "two": 4}}, "opts": {"default_axis_is_horizontal": true}, "class": "Splits", "all_windows": {"active_group_idx": 0, "active_group_history": [1, 2, 5, 4], "window_groups": [{"id": 1, "window_ids": [1]}, {"id": 2, "window_ids": [2]}, {"id": 5, "window_ids": [5]}, {"id": 4, "window_ids": [4]}]}}
+cd ~
+
+launch 'kitty-unserialize-data={"id": 1}'
+focus
+launch 'kitty-unserialize-data={"id": 2, "cmd_at_shell_startup": "clear;minilogo"}'
+launch 'kitty-unserialize-data={"id": 5, "cmd_at_shell_startup": "tenki"}'
+launch 'kitty-unserialize-data={"id": 4, "cmd_at_shell_startup": "htop"}'
+
+focus_tab 0
