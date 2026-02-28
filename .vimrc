@@ -24,6 +24,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
+Plug 'lervag/vimtex'
+Plug 'ubaldot/vim-outline'
 
 call plug#end()
 
@@ -35,3 +37,7 @@ autocmd FileType c setlocal commentstring=//\ %s
 let g:airline_theme='deus'
 
 let g:indentLine_char = '|'
+
+let g:vimtex_view_method = 'zathura'
+
+nnoremap <C-o> :OutlineToggle<CR>
