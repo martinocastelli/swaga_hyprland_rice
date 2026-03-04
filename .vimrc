@@ -3,13 +3,14 @@ set tabstop=4
 set shiftwidth=4
 set autoindent
 set number
-set relativenumber
+" set relativenumber
 set mouse=a
 colorscheme default
 set list lcs=tab:\|\   
+set nowrap
+set conceallevel=0
 
 syntax on
-
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -34,10 +35,26 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 filetype plugin indent on
 autocmd FileType c setlocal commentstring=//\ %s
 
-let g:airline_theme='deus'
+"Fonts for the Status Line
+let g:airline_theme='simple'
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.readonly = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
 
 let g:indentLine_char = '|'
 
 let g:vimtex_view_method = 'zathura'
 
 nnoremap <C-o> :OutlineToggle<CR>
+
