@@ -8,7 +8,8 @@ set mouse=a
 colorscheme default
 set list lcs=tab:\|\   
 set nowrap
-set conceallevel=0
+set conceallevel=2
+set concealcursor="c"
 
 syntax on
 
@@ -53,6 +54,10 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 
 let g:indentLine_char = '|'
+let g:indentLine_first_char = '|'
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_setConceal = 0
+let g:indentLine_color_term = 122 " magic number i don't know what does it mean
 
 let g:vimtex_view_method = 'zathura'
 
