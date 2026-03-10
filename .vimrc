@@ -11,6 +11,9 @@ set nowrap
 set conceallevel=2
 set concealcursor="c"
 
+au BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
+" au BufWritePost *.c,*.cpp,*.h !ctags -R
+
 syntax on
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -61,5 +64,5 @@ let g:indentLine_color_term = 122 " magic number i don't know what does it mean
 
 let g:vimtex_view_method = 'zathura'
 
-nnoremap <C-o> :OutlineToggle<CR>
+" nnoremap <C-i> :OutlineToggle<CR>
 
