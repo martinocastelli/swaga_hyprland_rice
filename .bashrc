@@ -40,4 +40,9 @@ fastfetch
 
 . "$HOME/.local/bin/env"
 
+eval "$(atuin init bash --disable-up-arrow)"
+
 eval "$(zoxide init bash)"
+
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
