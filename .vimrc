@@ -64,5 +64,5 @@ let g:indentLine_color_term = 122 " magic number i don't know what does it mean
 
 let g:vimtex_view_method = 'zathura'
 
-" nnoremap <C-i> :OutlineToggle<CR>
+nnoremap <C-k> :OutlineToggle<CR>
 
