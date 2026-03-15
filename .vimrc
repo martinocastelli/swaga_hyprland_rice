@@ -7,9 +7,14 @@ set number
 set mouse=a
 colorscheme default
 set list lcs=tab:\|\   
-set nowrap
+set wrap
 set conceallevel=2
-set concealcursor="c"
+set concealcursor=nc
+
+command W w
+command Q q
+command WQ wq
+command Wq wq
 
 au BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
 " au BufWritePost *.c,*.cpp,*.h !ctags -R
@@ -18,8 +23,8 @@ syntax on
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+	silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin()
 
@@ -54,7 +59,6 @@ let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.readonly = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
-
 
 let g:indentLine_char = '|'
 let g:indentLine_first_char = '|'
