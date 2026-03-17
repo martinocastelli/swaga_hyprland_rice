@@ -31,7 +31,7 @@ function nonzero_return() {
 	[ $RETVAL -ne 0 ] && echo "$RETVAL "
 }
 
-PS1="\[\e[31m\]\`nonzero_return\`\[\e[m\]\[\e[34m\]\w\[\e[m\]\[\e[35m\]\\$\[\e[m\] "
+PS1="\[\e[31m\]\`nonzero_return\`\[\e[34m\]\W\[\e[m\]\[\e[35m\]\\$\[\e[m\] "
 
 echo -ne "\033[31m"
 figlet arch -f Sub-Zero

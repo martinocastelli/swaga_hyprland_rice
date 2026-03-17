@@ -7,6 +7,8 @@
     min-height: 0;
     margin: 0;
     padding: 0;
+
+	color: #00bfff;
 }
 
 window#waybar {
@@ -17,7 +19,6 @@ tooltip {
     background: #121212;
 }
 tooltip label {
-    color: #00bfff;
 }
 
 #workspaces {
@@ -28,7 +29,6 @@ tooltip label {
 #workspaces button {
     padding: 0 5px;
     background: transparent;
-    color: #00bfff;
 }
 
 #custom-dropbox,
@@ -39,7 +39,6 @@ tooltip label {
 #bluetooth,
 #clock {
     background-color: #121212;
-    color: #00bfff;
     padding: 0 5px;
     margin: 0 5px;
 }
@@ -47,14 +46,12 @@ tooltip label {
 #cava,
 #pulseaudioi {
 	background-color: #121212;
-	color: #00bfff;
 	padding: 0 5px;
 	margin: 0 5px;
 }
 
 #custom-launcher {
     background-color: #121212;
-    color: #00bfff;
     padding: 0 5px;
     margin: 0 5px;
     border: 1px solid #00bfff;

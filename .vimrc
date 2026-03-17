@@ -3,7 +3,7 @@ set tabstop=4
 set shiftwidth=4
 set autoindent
 set number
-" set relativenumber
+set relativenumber
 set mouse=a
 colorscheme default
 set list lcs=tab:\|\   
@@ -16,7 +16,7 @@ command Q q
 command WQ wq
 command Wq wq
 
-au BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
+autocmd BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
 " au BufWritePost *.c,*.cpp,*.h !ctags -R
 
 syntax on
