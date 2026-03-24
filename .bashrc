@@ -6,6 +6,7 @@
 [[ $- != *i* ]] && return
 
 # alias cd='z'
+alias lg='lazygit'
 alias ls='eza'
 alias ll='eza -lh --group-directories-first'
 alias lls='eza -lh --total-size --group-directories-first'
