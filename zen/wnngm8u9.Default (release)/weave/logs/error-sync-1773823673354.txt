@@ -1,0 +1,22 @@
+1773823236481	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=schedule)
+1773823672045	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change: scheduling a quick-write in 5000ms
+1773823673089	Sync.Service	DEBUG	User-Agent: Zen/1.19.3b (Linux x86_64) FxSync/1.150.0.20260315063056.desktop
+1773823673089	Sync.Service	INFO	Starting sync at 2026-03-18 09:47:53 in browser session EBLAScPlw55L
+1773823673089	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1773823673092	Sync.Status	INFO	Resetting Status.
+1773823673092	Sync.Status	DEBUG	Status.service: success.status_ok => success.status_ok
+1773823673093	FirefoxAccounts	DEBUG	FxAccountsProfileClient: Requested profile
+1773823673093	FirefoxAccounts	DEBUG	getOAuthToken enter
+1773823673094	FirefoxAccounts	TRACE	getCachedToken returning cached token
+1773823673095	FirefoxAccounts	DEBUG	getOAuthToken returning a cached token
+1773823673095	Services.Common.RESTRequest	DEBUG	GET request to https://profile.accounts.firefox.com/v1/profile
+1773823673299	FirefoxAccounts	DEBUG	CommandQueue shutdown is flushing the queue with a timer=false
+1773823673341	Services.Common.RESTRequest	DEBUG	GET https://profile.accounts.firefox.com/v1/profile 304
+1773823673346	Sync.Resource	DEBUG	GET success 200 https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/203017846/info/collections
+1773823673347	Sync.Service	DEBUG	Fetching server configuration: https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/203017846/info/configuration
+1773823673348	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent
+1773823673352	Sync.Resource	WARN	GET request to https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/203017846/info/configuration failed: [Exception... "<no message>"  nsresult: "0x8046001e (<unknown>)"  location: "<unknown>"  data: no] No traceback available
+1773823673352	Sync.Service	WARN	Failed to fetch info/configuration: [Exception... "<no message>"  nsresult: "0x8046001e (<unknown>)"  location: "<unknown>"  data: no] No traceback available
+1773823673352	Sync.ErrorHandler	ERROR	Sync encountered an error: Error: Aborting sync, remote setup failed(resource://services-sync/stages/enginesync.sys.mjs:96:13) JS Stack trace: sync@enginesync.sys.mjs:96:13
+1773823673353	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=reschedule)
+1773823673354	Sync.Service	DEBUG	Exception calling anonymous function: Error: Aborting sync, remote setup failed(resource://services-sync/stages/enginesync.sys.mjs:96:13) JS Stack trace: sync@enginesync.sys.mjs:96:13
