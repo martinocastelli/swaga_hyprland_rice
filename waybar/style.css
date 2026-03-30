@@ -43,11 +43,12 @@ tooltip label {
 	margin: 0 5px;
 }
 
+#mpris,
 #cava,
-#pulseaudioi {
+#pulseaudio {
 	background-color: #121212;
-	padding: 0 5px;
-	margin: 0 5px;
+	padding: 0 2px;
+	margin: 0 2px;
 }
 
 #custom-launcher {
