@@ -12,50 +12,38 @@
 	"modules": [
 		{
 			"type": "custom",
-			"key": "╭─────────────────────────────────────╮"
+			"key": "╭────────────────────────────────────────╮"
 		},
 		{
 			"type": "custom",
-			"key": "│{$2} My hyprland rice                 󰣇 {$1} │"
+			"key": "│{$2} My hyprland rice                    󰣇 {$1} │"
 		},
-		// {
-		//     "type": "command",
-		//     "key": "│{$3}   user  ",
-		//     "text": "echo $USER",
-		//     "format": "{$3}{>24}{$1} │"
-		// },
-		// {
-		//     "type": "command",
-		//     "key": "│{$4}   uptime",
-		//     "text": "uptime -p | cut -d ' ' -f 2-",
-		//     "format": "{$4}{>24} {$1}│"
-		// },
 		{
 			"type": "command",
 			"key": "│{$3}   mem   ",
-			"text": "free -m | awk 'NR==2{printf \"%.2f GiB / %.2f GiB\",$3/1024,$2/1024}'",
-			"format": "{$3}{>24} {$1}│"
+			"text": "free -m | awk 'NR==2{printf \"%.2fGB / %.2fGB\",$3/1024,$2/1024}'",
+			"format": "{$3}{>27} {$1}│"
 		},
 		{
 			"type": "command",
 			"key": "│{$4}   Disk (/) ",
 			"text": "~/.config/fastfetch/get_disk.sh | head -n 1",
-			"format": "{$4}{>21} {$1}│"
+			"format": "{$4}{>24} {$1}│"
 		},
 		{
 			"type": "command",
 			"key": "│{$5}   Disk (/home) ",
 			"text": "~/.config/fastfetch/get_disk.sh | tail -n 1",
-			"format": "{$5}{>17} {$1}│"
+			"format": "{$5}{>20} {$1}│"
 		},
 		{
 			"type": "packages",
 			"key": "│{$6}   pkgs  ",
-			"format": "{$6}{all>24} {$1}│"
+			"format": "{$6}{all>27} {$1}│"
 		},
 		{
 			"type": "custom",
-			"key": "╰─────────────────────────────────────╯"
+			"key": "╰────────────────────────────────────────╯"
 		},
 		"break"
 	]
