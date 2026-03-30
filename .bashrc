@@ -20,7 +20,7 @@ alias minilogo='env PF_INFO="ascii" pfetch'
 alias zen='zen-browser'
 alias open='xdg-open'
 alias pdf='bookokrat'
-alias split_terminal='kitty --directory $(pwd) --detach'
+alias split_term='kitty --directory $(pwd) --detach'
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
