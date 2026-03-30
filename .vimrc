@@ -17,7 +17,6 @@ command WQ wq
 command Wq wq
 
 autocmd BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
-" au BufWritePost *.c,*.cpp,*.h !ctags -R
 
 syntax on
 
@@ -38,6 +37,9 @@ Plug 'lervag/vimtex'
 Plug 'ubaldot/vim-outline'
 
 call plug#end()
+
+hi ErrorMsg ctermfg=red ctermbg=black
+hi Error ctermfg=red ctermbg=black
 
 nnoremap <C-t> :NERDTreeToggle<CR>
 
@@ -69,4 +71,10 @@ let g:indentLine_color_term = 122 " magic number i don't know what does it mean
 let g:vimtex_view_method = 'zathura'
 
 nnoremap <C-k> :OutlineToggle<CR>
+
+let g:ycm_enable_semantic_highlighting=1
+let g:ycm_enable_diagnostic_highlighting=0
+let g:ycm_min_num_of_chars_for_completion=2
+let g:ycm_auto_trigger = 1
+imap <c-d> <plug>(YCMComplete)
 
