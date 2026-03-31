@@ -6,25 +6,25 @@
 	"modules-left": [
 		"custom/launcher",
 		"hyprland/workspaces",
-		"group/audio"
+		"group/music"
 	],
 	"modules-center": [
 		"clock"
 	],
 	"modules-right": [
 		"custom/dropbox",
+		"pulseaudio",
 		"bluetooth",
 		"backlight",
 		"network",
 		"battery"
 	],
-	"group/audio": {
+	"group/music": {
 		"orientation": "horizontal",
 		"modules": [
-			// "cava",
+			"custom/music-logo",
 			"mpris",
-			"cava",
-			"pulseaudio"
+			"cava"
 		]
 	},
 	//////////////////////////////////////////////////////////////////
@@ -46,10 +46,15 @@
 		},
 		"sort-by-number": true
 	},
+	"custom/music-logo": {
+		"format": "",
+		"on-click": "kitty --hold spotify_player",
+		"tooltip": false
+	},
 	"mpris": {
-		"format": " {status_icon} {title}",
+		"format": "{status_icon} {title}",
 		"interval": 1,
-		"title-len": 30,
+		"title-len": 15,
 		"status-icons": {
 			"playing": "▶",
 			"paused": "⏸",
@@ -76,6 +81,17 @@
 		"input_delay": 2,
 		"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ]
 	},
+	//////////////////////////////////////////////////////////////////
+	"clock": {
+		"format": "{:%H:%M, %d.%m.%Y}"
+	},
+	//////////////////////////////////////////////////////////////////
+	"custom/dropbox": {
+		"exec": "/home/martino/.config/waybar/check_dropbox.sh",
+		"format": "{text}",
+		"return-type": "json",
+		"interval": 10
+	},
 	"pulseaudio": {
 		"format": "{volume}% {icon}",
 		"format-bluetooth": "{volume}% {icon} ",
@@ -91,17 +107,6 @@
 		},
 		"scroll-step": 1,
 		"ignored-sinks": ["Easy Effects Sink"]
-	},
-	//////////////////////////////////////////////////////////////////
-	"clock": {
-		"format": "{:%H:%M, %d.%m.%Y}"
-	},
-	//////////////////////////////////////////////////////////////////
-	"custom/dropbox": {
-		"exec": "/home/martino/.config/waybar/check_dropbox.sh",
-		"format": "{text}",
-		"return-type": "json",
-		"interval": 10
 	},
 	"bluetooth": {
 		"format": "",

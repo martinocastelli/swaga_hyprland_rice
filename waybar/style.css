@@ -32,21 +32,27 @@ tooltip label {
 }
 
 #custom-dropbox,
-#audio,
 #battery,
 #backlight,
 #network,
 #bluetooth,
-#clock {
+#clock,
+#pulseaudio {
 	background-color: #121212;
 	padding: 0 5px;
 	margin: 0 5px;
 }
 
+#music {
+	background: #121212;
+	padding: 0 5px;
+	margin: 0 5px;
+	border: 1px solid #00bfff;
+}
+
+#custom-music-logo,
 #mpris,
-#cava,
-#pulseaudio {
-	background-color: #121212;
+#cava {
 	padding: 0 2px;
 	margin: 0 2px;
 }
