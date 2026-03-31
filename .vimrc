@@ -9,7 +9,7 @@ colorscheme default
 set list lcs=tab:\|\   
 set wrap
 set conceallevel=2
-set concealcursor=nc
+set concealcursor=c
 
 command W w
 command Q q
@@ -34,7 +34,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
 Plug 'lervag/vimtex'
-Plug 'ubaldot/vim-outline'
 
 call plug#end()
 
@@ -70,11 +69,10 @@ let g:indentLine_color_term = 122 " magic number i don't know what does it mean
 
 let g:vimtex_view_method = 'zathura'
 
-nnoremap <C-k> :OutlineToggle<CR>
-
 let g:ycm_enable_semantic_highlighting=1
 let g:ycm_enable_diagnostic_highlighting=0
 let g:ycm_min_num_of_chars_for_completion=2
 let g:ycm_auto_trigger = 1
-imap <c-d> <plug>(YCMComplete)
+" imap <c-d> <plug>(YCMComplete)
+set completeopt-=preview
 
