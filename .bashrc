@@ -9,6 +9,7 @@
 alias lg='lazygit'
 alias ls='eza'
 alias ll='eza -lh --group-directories-first'
+alias lla='eza -lha --group-directories-first'
 alias lls='eza -lh --total-size --group-directories-first'
 alias la='eza -a'
 alias clr_logo='clear;fastfetch'
