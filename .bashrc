@@ -38,11 +38,6 @@ function nonzero_return() {
 
 PS1="\[\e[31m\]\`nonzero_return\`\[\e[34m\]\W\[\e[m\]\[\e[35m\]\\$\[\e[m\] "
 
-echo -ne "\033[31m"
-figlet arch -f Sub-Zero
-echo -ne "\033[0m"
-fastfetch
-
 . "$HOME/.local/bin/env"
 
 # Set up fzf key bindings and fuzzy completion
@@ -54,3 +49,8 @@ eval "$(zoxide init bash)"
 
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+
+echo -ne "\033[31m"
+figlet arch -f Sub-Zero
+echo -ne "\033[0m"
+fastfetch
