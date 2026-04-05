@@ -1,6 +1,6 @@
 * {
 	border: none;
-	border-radius: 20;
+	border-radius: 0;
 	font-family: "JetBrainsMono Nerd Font Propo";
 	font-size: 12px;
 
@@ -12,7 +12,7 @@
 }
 
 window#waybar {
-	background: transparent;
+	background: #121212;
 }
 
 tooltip {
@@ -23,7 +23,7 @@ tooltip label {
 
 #workspaces {
 	background: #121212;
-	border: 1px solid #00bfff;
+	/* border: 1px solid #00bfff; */
 }
 
 #workspaces button {
@@ -47,7 +47,7 @@ tooltip label {
 	background: #121212;
 	padding: 0 5px;
 	margin: 0 5px;
-	border: 1px solid #00bfff;
+	/* border: 1px solid #00bfff; */
 }
 
 #custom-music-logo,
@@ -61,7 +61,7 @@ tooltip label {
 	background-color: #121212;
 	padding: 0 5px;
 	margin: 0 5px;
-	border: 1px solid #00bfff;
+	/* border: 1px solid #00bfff; */
 
 	font-size: 20px;
 }
