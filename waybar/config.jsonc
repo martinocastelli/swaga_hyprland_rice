@@ -31,7 +31,7 @@
 	//////////////////////////////////////////////////////////////////
 	"custom/launcher": {
 		"format": "󰣇",
-		"on-click": "rofi -show drun",
+		"on-click": "wofi --show drun",
 		"tooltip": false
 	},
 	"hyprland/workspaces": {
