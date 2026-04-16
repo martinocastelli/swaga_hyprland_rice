@@ -2,18 +2,18 @@
 # df -h | grep /dev/nvme0n1 | head -n 1 | tail -n 1
 
 # partition /
-s1=$(df -h | grep /dev/nvme0n1 | tr -s ' ' | head -n 1 | tail -n 1 | cut -d ' ' -f 3)
-s2=$(df -h | grep /dev/nvme0n1 | tr -s ' ' | head -n 1 | tail -n 1 | cut -d ' ' -f 2)
-s3=$(df -h | grep /dev/nvme0n1 | tr -s ' ' | head -n 1 | tail -n 1 | cut -d ' ' -f 5)
+s1=$(df -h | grep /dev/nvme0n1p2 | tr -s ' ' | cut -d ' ' -f 3)
+s2=$(df -h | grep /dev/nvme0n1p2 | tr -s ' ' | cut -d ' ' -f 2)
+s3=$(df -h | grep /dev/nvme0n1p2 | tr -s ' ' | cut -d ' ' -f 5)
 
 s4=${s1}" / "${s2}" ("${s3}")"
 
 echo ${s4}
 
 # partition /home
-s1=$(df -h | grep /dev/nvme0n1 | tr -s ' ' | head -n 2 | tail -n 1 | cut -d ' ' -f 3)
-s2=$(df -h | grep /dev/nvme0n1 | tr -s ' ' | head -n 2 | tail -n 1 | cut -d ' ' -f 2)
-s3=$(df -h | grep /dev/nvme0n1 | tr -s ' ' | head -n 2 | tail -n 1 | cut -d ' ' -f 5)
+s1=$(df -h | grep /dev/nvme0n1p3 | tr -s ' ' | cut -d ' ' -f 3)
+s2=$(df -h | grep /dev/nvme0n1p3 | tr -s ' ' | cut -d ' ' -f 2)
+s3=$(df -h | grep /dev/nvme0n1p3 | tr -s ' ' | cut -d ' ' -f 5)
 
 s4=${s1}" / "${s2}" ("${s3}")"
 
