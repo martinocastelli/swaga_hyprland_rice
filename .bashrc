@@ -13,7 +13,7 @@ alias lla='eza -lha --group-directories-first'
 alias lls='eza -lh --total-size --group-directories-first'
 alias la='eza -a'
 alias clr_logo='clear;fastfetch'
-alias clr_logo_dir='clear;fastfetch;eza -laih --total-size --group-directories-first'
+alias clr_logo_dir='clear;fastfetch;eza -laih --total-size --group-directories-first;pwd'
 alias grep='grep --color=auto'
 alias tree='eza -lh --total-size --group-directories-first -T'
 alias matrix='neo-matrix -D --charset=ascii'
@@ -22,6 +22,7 @@ alias zen='zen-browser'
 alias open='xdg-open'
 alias pdf='bookokrat'
 alias split_term='kitty --directory $(pwd) --detach'
+alias fzfcd='cd $(find . -type d | fzf)'
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
