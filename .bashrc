@@ -66,7 +66,9 @@ eval "$(zoxide init bash)"
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 
-echo -ne "\033[31m"
-figlet arch -f Sub-Zero
-echo -ne "\033[0m"
-fastfetch
+if (($COLUMNS >= 62 && $LINES >= 15)); then
+	echo -ne "\033[31m"
+	figlet arch -f Sub-Zero
+	echo -ne "\033[0m"
+	fastfetch
+fi
