@@ -193,10 +193,17 @@ ShellRoot {
 		onTriggered: {
 			cpuProc.running = true
 			memProc.running = true
-			volProc.running = true
 			dropboxProc.running = true
 			networkProc.running = true
 			batteryProc.running = true
+		}
+	}
+	Timer {
+		interval: 200
+		running: true
+		repeat: true
+		onTriggered: {
+			volProc.running = true
 		}
 	}
 
@@ -408,7 +415,7 @@ ShellRoot {
 					Rectangle { Layout.preferredWidth: 1; Layout.preferredHeight: 16;Layout.alignment: Qt.AlignVCenter;Layout.leftMargin: 0;Layout.rightMargin: 8;color: root.colMuted}
 
 					Text {
-						text: batteryLevel + "%"
+						text: "Bat: " + batteryLevel + "%"
 						color: batteryLevel <= 20?root.colRed:root.colGreen
 						font.pixelSize: root.fontSize
 						font.family: root.fontFamily
