@@ -1,5 +1,3 @@
-" source ~/.vim/vimrc
-
 set autoindent
 set tabstop=4
 set shiftwidth=4
@@ -81,6 +79,8 @@ let g:indentLine_setConceal = 0
 let g:indentLine_color_term = 122 " magic number i don't know what does it mean
 
 let g:vimtex_view_method = 'zathura'
+
+command Ct ColorToggle 
 
 let g:ycm_enable_semantic_highlighting=1
 let g:ycm_enable_diagnostic_highlighting=0
