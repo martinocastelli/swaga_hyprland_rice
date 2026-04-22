@@ -1,3 +1,5 @@
+" source ~/.vim/vimrc
+
 set autoindent
 set tabstop=4
 set shiftwidth=4
@@ -43,6 +45,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
 Plug 'lervag/vimtex'
+Plug 'chrisbra/Colorizer'
 
 call plug#end()
 

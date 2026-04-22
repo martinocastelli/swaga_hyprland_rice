@@ -20,7 +20,7 @@ alias pdf='bookokrat'
 alias split_term='kitty --directory $(pwd) --detach'
 alias fzfcd='cd $(find . -type d | fzf)'
 #manage trash cli
-alias rm='echo "!!!use trash-cli!!!\n(trsh)";false'
+alias rm='echo -e "!!!use trash-cli!!!\n(trsh)";false'
 alias trsh='trash-put'
 
 function y() {
