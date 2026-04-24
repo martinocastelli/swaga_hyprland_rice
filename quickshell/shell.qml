@@ -21,7 +21,10 @@ ShellRoot {
 
 	// Font
 	property string fontFamily: "JetBrainsMono Nerd Font"
-	property int fontSize: 12
+	property int fontSize: 14
+
+	property int minShowWorkspaces: 9
+	property int maxShowWorkspaces: 20
 
 	// System info properties
 	property string kernelVersion: "Linux"
@@ -34,6 +37,7 @@ ShellRoot {
 	property bool dropboxActive: false
 	property string connectedNetwork: "disconnected"
 	property int batteryLevel: 0
+	property bool batteryCharging: false
 
 	// CPU tracking
 	property var lastCpuIdle: 0
@@ -173,7 +177,7 @@ ShellRoot {
 		Component.onCompleted: running = true
 	}
 	Process {
-		id: batteryProc
+		id: batteryProc1
 		command: ["sh", "-c", "cat /sys/class/power_supply/BAT0/capacity"]
 		stdout: SplitParser {
 			onRead: data => {
@@ -184,6 +188,19 @@ ShellRoot {
 		}
 		Component.onCompleted: running = true
 	}
+	Process {
+		id: batteryProc2
+		command: ["sh", "-c", "cat /sys/class/power_supply/BAT0/status"]
+		stdout: SplitParser {
+			onRead: data => {
+				if(data && data.trim()) {
+					batteryCharging = data.trim() == "Charging"
+				}
+			}
+		}
+		Component.onCompleted: running = true
+	}
+		
 
 	// Slow timer for system stats
 	Timer {
@@ -195,7 +212,8 @@ ShellRoot {
 			memProc.running = true
 			dropboxProc.running = true
 			networkProc.running = true
-			batteryProc.running = true
+			batteryProc1.running = true
+			batteryProc2.running = true
 		}
 	}
 	Timer {
@@ -249,17 +267,13 @@ ShellRoot {
 				left: 0
 				right: 0
 			}
-
 			Rectangle {
 				anchors.fill: parent
 				color: root.colBg
-
 				RowLayout {
 					anchors.fill: parent
 					spacing: 0
-
 					Item { width: 8 }
-
 					Text {
 						text: "󰣇"
 						color: root.colBlue
@@ -271,21 +285,17 @@ ShellRoot {
 							onClicked: Hyprland.dispatch("exec wofi --show drun")
 						}
 					}
-
 					Item { width: 8 }
-
 					Repeater {
-						model: 10
-
+						property int activeWorkspace: Hyprland.focusedWorkspace.id
+						model: activeWorkspace <= root.minShowWorkspaces?root.minShowWorkspaces:(activeWorkspace > root.maxShowWorkspaces?root.maxShowWorkspaces:activeWorkspace)
 						Rectangle {
 							Layout.preferredWidth: 20
 							Layout.preferredHeight: parent.height
 							color: "transparent"
-
 							property var workspace: Hyprland.workspaces.values.find(ws => ws.id === index + 1) ?? null
 							property bool isActive: Hyprland.focusedWorkspace?.id === (index + 1)
 							property bool hasWindows: workspace !== null
-
 							Text {
 								text: index + 1
 								color: parent.isActive ? root.colCyan : (parent.hasWindows ? root.colCyan : root.colMuted)
@@ -294,7 +304,6 @@ ShellRoot {
 								font.bold: true
 								anchors.centerIn: parent
 							}
-
 							Rectangle {
 								visible: parent.isActive
 								width: 20
@@ -303,16 +312,35 @@ ShellRoot {
 								anchors.horizontalCenter: parent.horizontalCenter
 								anchors.bottom: parent.bottom
 							}
-
 							MouseArea {
 								anchors.fill: parent
 								onClicked: Hyprland.dispatch("workspace " + (index + 1))
 							}
 						}
 					}
-
+					Rectangle {
+						Layout.preferredWidth: 20
+						Layout.preferredHeight: parent.height
+						color: "transparent"
+						property int activeWorkspace: Hyprland.focusedWorkspace.id
+						visible: activeWorkspace > root.maxShowWorkspaces
+						Text {
+							text: parent.activeWorkspace
+							color: root.colCyan
+							font.pixelSize: root.fontSize
+							font.family: root.fontFamily
+							font.bold: true
+							anchors.centerIn: parent
+						}
+						Rectangle {
+							width: 20
+							height: 3
+							color: root.colPurple 
+							anchors.horizontalCenter: parent.horizontalCenter
+							anchors.bottom: parent.bottom
+						}
+					}
 					Rectangle { Layout.preferredWidth: 1; Layout.preferredHeight: 16;Layout.alignment: Qt.AlignVCenter;Layout.leftMargin: 0;Layout.rightMargin: 8;color: root.colMuted}
-
 					Text {
 						text: currentLayout
 						color: root.colFg
@@ -322,9 +350,7 @@ ShellRoot {
 						Layout.leftMargin: 5
 						Layout.rightMargin: 5
 					}
-
 					Rectangle { Layout.preferredWidth: 1; Layout.preferredHeight: 16;Layout.alignment: Qt.AlignVCenter;Layout.leftMargin: 0;Layout.rightMargin: 8;color: root.colMuted}
-
 					Text {
 						text: activeWindow
 						color: root.colPurple
@@ -336,7 +362,6 @@ ShellRoot {
 						elide: Text.ElideRight
 						maximumLineCount: 1
 					}
-
 					Text {
 						visible: dropboxActive
 						text: ""
@@ -347,7 +372,6 @@ ShellRoot {
 						Layout.rightMargin: 8
 					}
 					Rectangle { visible: dropboxActive; Layout.preferredWidth: 1; Layout.preferredHeight: 16;Layout.alignment: Qt.AlignVCenter;Layout.leftMargin: 0;Layout.rightMargin: 8;color: root.colMuted}
-
 					Text {
 						text: "CPU: " + cpuUsage + "%"
 						color: root.colYellow
@@ -366,9 +390,7 @@ ShellRoot {
 						font.bold: true
 						Layout.rightMargin: 8
 					}
-
 					Rectangle { Layout.preferredWidth: 1; Layout.preferredHeight: 16;Layout.alignment: Qt.AlignVCenter;Layout.leftMargin: 0;Layout.rightMargin: 8;color: root.colMuted}
-
 					Text {
 						text: "Vol: " + volumeLevel + "%"
 						color: root.colPurple
@@ -377,9 +399,17 @@ ShellRoot {
 						font.bold: true
 						Layout.rightMargin: 8
 					}
-
 					Rectangle { Layout.preferredWidth: 1; Layout.preferredHeight: 16;Layout.alignment: Qt.AlignVCenter;Layout.leftMargin: 0;Layout.rightMargin: 8;color: root.colMuted}
-
+					Text {
+						text: "Batt: " + batteryLevel + "%" + (batteryCharging?" ":"")
+						color: batteryLevel <= 20?root.colRed:root.colGreen
+						font.pixelSize: root.fontSize
+						font.family: root.fontFamily
+						font.bold: true
+						Layout.rightMargin: 8
+					}
+					Item { width: 8 }
+					Rectangle { Layout.preferredWidth: 1; Layout.preferredHeight: 16;Layout.alignment: Qt.AlignVCenter;Layout.leftMargin: 0;Layout.rightMargin: 8;color: root.colMuted}
 					Text {
 						text: connectedNetwork
 						color: root.colRed
@@ -392,9 +422,7 @@ ShellRoot {
 							onClicked: Hyprland.dispatch("exec [float;center;size 550 400] kitty iwctl")
 						}
 					}
-
 					Rectangle { Layout.preferredWidth: 1; Layout.preferredHeight: 16;Layout.alignment: Qt.AlignVCenter;Layout.leftMargin: 0;Layout.rightMargin: 8;color: root.colMuted}
-
 					Text {
 						id: clockText
 						text: Qt.formatDateTime(new Date(), "ddd, dd MMM - HH:mm")
@@ -403,7 +431,6 @@ ShellRoot {
 						font.family: root.fontFamily
 						font.bold: true
 						Layout.rightMargin: 8
-
 						Timer {
 							interval: 1000
 							running: true
@@ -411,22 +438,6 @@ ShellRoot {
 							onTriggered: clockText.text = Qt.formatDateTime(new Date(), "ddd, dd MMM - HH:mm")
 						}
 					}
-
-					Rectangle { Layout.preferredWidth: 1; Layout.preferredHeight: 16;Layout.alignment: Qt.AlignVCenter;Layout.leftMargin: 0;Layout.rightMargin: 8;color: root.colMuted}
-
-					Text {
-						text: "Bat: " + batteryLevel + "%"
-						color: batteryLevel <= 20?root.colRed:root.colGreen
-						font.pixelSize: root.fontSize
-						font.family: root.fontFamily
-						font.bold: true
-						Layout.rightMargin: 8
-						MouseArea {
-							anchors.fill: parent
-							onClicked: Hyprland.dispatch("exec [float;center;size 550 400] kitty iwctl")
-						}
-					}
-					Item { width: 8 }
 				}
 			}
 		}
