@@ -14,9 +14,6 @@ set showmatch
 
 syntax on
 
-" to generate tags file for C and Cpp files
-autocmd BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
-
 
 hi ErrorMsg ctermfg=red ctermbg=black
 hi Error ctermfg=red ctermbg=black

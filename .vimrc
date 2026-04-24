@@ -1,4 +1,4 @@
-source ~/vim/vimrc
+source /home/martino/vim/vimrc
 
 """ minimalistic setting (without plugin)
 

@@ -22,4 +22,6 @@ command Q q
 command WQ wq
 command Wq wq
 
+" to generate tags file for C and Cpp files
+autocmd BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
 
