@@ -419,7 +419,7 @@ ShellRoot {
 						Layout.rightMargin: 8
 						MouseArea {
 							anchors.fill: parent
-							onClicked: Hyprland.dispatch("exec [float;center;size 550 400] kitty iwctl")
+							onClicked: Hyprland.dispatch("exec [float;center;size 700 500] kitty iwctl")
 						}
 					}
 					Rectangle { Layout.preferredWidth: 1; Layout.preferredHeight: 16;Layout.alignment: Qt.AlignVCenter;Layout.leftMargin: 0;Layout.rightMargin: 8;color: root.colMuted}
