@@ -25,3 +25,12 @@ command Wq wq
 " to generate tags file for C and Cpp files
 autocmd BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
 
+" removing arrow keys for movements
+nnoremap <left> <Nop>
+nnoremap <right> <Nop>
+nnoremap <up> <Nop>
+nnoremap <down> <Nop>
+vnoremap <left> <Nop>
+vnoremap <right> <Nop>
+vnoremap <up> <Nop>
+vnoremap <down> <Nop>
