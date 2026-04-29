@@ -38,6 +38,10 @@ function nonzero_return() {
 
 PS1="\[\e[31m\]\`nonzero_return\`\[\e[34m\]\W\[\e[m\]\[\e[35m\]\\$\[\e[m\] "
 
+# set the env vars
+export EDITOR=vim
+export VISUAL=vim
+
 # https://gist.github.com/bahamas10/542875bb47990933638d2b7dfaa501bf
 export LESS_TERMCAP_mb=$'\e[1;31m'
 export LESS_TERMCAP_md=$'\e[1;31m'
