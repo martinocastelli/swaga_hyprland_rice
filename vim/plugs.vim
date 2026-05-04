@@ -14,7 +14,7 @@ Plug 'lervag/vimtex'
 Plug 'chrisbra/Colorizer'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'yegappan/lsp'
 
 call plug#end()
 
-let mapleader = " "

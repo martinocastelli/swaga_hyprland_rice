@@ -1,12 +1,13 @@
 source /home/martino/vim/settings.vim
-source /home/martino/vim/remapping.vim
 source /home/martino/vim/plugs.vim
+source /home/martino/vim/remapping.vim
 source /home/martino/vim/colorizer.vim
 source /home/martino/vim/fzf.vim 
 source /home/martino/vim/indentline.vim 
 source /home/martino/vim/nerdtree.vim 
-source /home/martino/vim/vim-airline.vim
+source /home/martino/vim/lightline.vim
 source /home/martino/vim/vim-commentary.vim
 source /home/martino/vim/vimtex.vim
-source /home/martino/vim/ycm.vim
+source /home/martino/vim/lsp.vim
+
 

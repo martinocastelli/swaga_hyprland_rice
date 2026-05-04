@@ -14,7 +14,12 @@ set showmatch
 
 syntax on
 
-
 hi ErrorMsg ctermfg=red ctermbg=black
 hi Error ctermfg=red ctermbg=black
-hi Search ctermfg=black
+hi Search ctermfg=black ctermbg=white
+hi SpellBad ctermfg=black ctermbg=red
+
+
+
+set fo=tq
+
