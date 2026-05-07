@@ -1,7 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# alias cd='z'
 alias lg='lazygit'
 alias ls='eza'
 alias ll='eza -lh --group-directories-first'
@@ -41,6 +40,9 @@ PS1="\[\e[31m\]\`nonzero_return\`\[\e[34m\]\W\[\e[m\]\[\e[35m\]\\$\[\e[m\] "
 # set the env vars
 export EDITOR=vim
 export VISUAL=vim
+export TERMINAL=kitty
+export XDG_HOME=/home/martino
+export XDG_CONFIG_HOME=/home/martino/.config
 
 # https://gist.github.com/bahamas10/542875bb47990933638d2b7dfaa501bf
 export LESS_TERMCAP_mb=$'\e[1;31m'
