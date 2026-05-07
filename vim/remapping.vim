@@ -13,6 +13,10 @@ map <C-right> <C-w>l
 " Open netrw with <leader>cd
 nnoremap <leader>cd :Ex<CR>
 
+" commands for save and exit
+nnoremap <leader>w :wa<CR>
+nnoremap <leader>q :qa<CR>
+
 " Center on next/previous search result
 nnoremap n nzzzv
 nnoremap N Nzzzv
@@ -25,6 +29,13 @@ vnoremap J :m '>+1<CR>gv=gv
 
 " Make <C-c> behave like <Esc> in insert mode
 inoremap <C-c> <Esc>
+
+" remove visual mode keybinding
+noremap Q <nop>
+
+""" C
+" create c function body from prototype
+nnoremap gcf A<BS> {<CR>}<ESC>O
 
 " closing and saving
 command W w

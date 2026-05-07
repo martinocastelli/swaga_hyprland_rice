@@ -15,6 +15,7 @@ Plug 'chrisbra/Colorizer'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'yegappan/lsp'
+Plug 'cacharle/vim-syntax-extra'
 
 call plug#end()
 
