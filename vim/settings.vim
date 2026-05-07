@@ -18,7 +18,7 @@ hi ErrorMsg ctermfg=red ctermbg=black
 hi Error ctermfg=red ctermbg=black
 hi Search ctermfg=black ctermbg=white
 hi SpellBad ctermfg=black ctermbg=red
-
+hi SpellCap ctermbg=100
 
 
 set fo=tq

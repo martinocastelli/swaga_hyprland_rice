@@ -33,7 +33,7 @@ command WQ wq
 command Wq wq
 
 " to generate tags file for C and Cpp files
-" autocmd BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
+autocmd BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
 
 " removing arrow keys for movements
 nnoremap <left> <Nop>
@@ -46,6 +46,7 @@ vnoremap <up> <Nop>
 vnoremap <down> <Nop>
 inoremap <left> <Nop>
 inoremap <right> <Nop>
-inoremap <down> <Nop>
-inoremap <up> <Nop>
+" for lsp completition
+" inoremap <down> <Nop>
+" inoremap <up> <Nop>
 

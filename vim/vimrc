@@ -10,4 +10,3 @@ source /home/martino/vim/vim-commentary.vim
 source /home/martino/vim/vimtex.vim
 source /home/martino/vim/lsp.vim
 
-
