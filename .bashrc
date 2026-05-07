@@ -64,7 +64,7 @@ eval "$(fzf --bash)"
 
 eval "$(atuin init bash --disable-up-arrow)"
 
-eval "$(zoxide init bash)"
+eval "$(zoxide init --cmd cd bash)"
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 
