@@ -32,6 +32,7 @@ ShellRoot {
 	property int memUsage: 0
 	property int diskUsage: 0
 	property int volumeLevel: 0
+	property int brightLevel: 0
 	property string activeWindow: "Window"
 	property string currentLayout: "Tile"
 	property bool dropboxActive: false
@@ -114,6 +115,21 @@ ShellRoot {
 				var match = data.match(/Volume:\s*([\d.]+)/)
 				if (match) {
 					volumeLevel = Math.round(parseFloat(match[1]) * 100)
+				}
+			}
+		}
+		Component.onCompleted: running = true
+	}
+
+	// Brightness level
+	Process {
+		id: brightProc
+		command: ["sh", "-c", "echo $(brightnessctl g) $(brightnessctl m)"]
+		stdout: SplitParser {
+			onRead: data => {
+				if (data && data.trim()) {
+					var parts = data.trim().split(" ")
+					brightLevel = parseInt(parts[0] / parts[1]  * 100)
 				}
 			}
 		}
@@ -222,6 +238,7 @@ ShellRoot {
 		repeat: true
 		onTriggered: {
 			volProc.running = true
+			brightProc.running = true
 		}
 	}
 
@@ -394,6 +411,15 @@ ShellRoot {
 					Text {
 						text: "Vol: " + volumeLevel + "%"
 						color: root.colPurple
+						font.pixelSize: root.fontSize
+						font.family: root.fontFamily
+						font.bold: true
+						Layout.rightMargin: 8
+					}
+					Rectangle { Layout.preferredWidth: 1; Layout.preferredHeight: 16;Layout.alignment: Qt.AlignVCenter;Layout.leftMargin: 0;Layout.rightMargin: 8;color: root.colMuted}
+					Text {
+						text: "Bright: " + brightLevel + "%"
+						color: root.colBlue
 						font.pixelSize: root.fontSize
 						font.family: root.fontFamily
 						font.bold: true
