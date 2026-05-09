@@ -1,6 +1,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+alias v='vim'
 alias lg='lazygit'
 alias ls='eza'
 alias ll='eza -lh --group-directories-first'
@@ -21,6 +22,7 @@ alias fzfcd='cd $(find . -type d | fzf)'
 #manage trash cli
 alias rm='echo -e "!!!use trash-cli!!!\n(trsh)";false'
 alias trsh='trash-put'
+alias ..='cd ..'
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
