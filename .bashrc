@@ -70,6 +70,8 @@ eval "$(atuin init bash --disable-up-arrow)"
 
 eval "$(zoxide init --cmd cd bash)"
 
+eval "$(thefuck --alias fk)"
+
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 
 if (($COLUMNS >= 62 && $LINES >= 15)); then
