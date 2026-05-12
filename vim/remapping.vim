@@ -15,7 +15,7 @@ nnoremap <leader>cd :Ex<CR>
 
 " commands for save and exit
 nnoremap <leader>w :wa<CR>
-nnoremap <leader>q :qa<CR>
+nnoremap <leader>q :q<CR>
 
 " Center on next/previous search result
 nnoremap n nzzzv

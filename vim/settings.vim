@@ -20,6 +20,8 @@ hi Search ctermfg=black ctermbg=white
 hi SpellBad ctermfg=black ctermbg=red
 hi SpellCap ctermbg=100
 
-
+"TODO fix this
 set fo=tq
 
+" Keep cursor 4 lines from top/bottom
+set scrolloff=4
