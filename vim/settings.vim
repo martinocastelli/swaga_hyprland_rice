@@ -25,3 +25,9 @@ set fo=tq
 
 " Keep cursor 4 lines from top/bottom
 set scrolloff=4
+
+let &t_EI = "\<Esc>[1 q" " Solid block in Normal mode
+let &t_SI = "\<Esc>[5 q" " Solid vertical bar in Insert mode
+let &t_SR = "\<Esc>[3 q" " Solid underline in Replace mode
+
+
