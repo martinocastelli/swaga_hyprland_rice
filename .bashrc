@@ -18,11 +18,10 @@ alias zen='zen-browser'
 alias open='xdg-open'
 alias pdf='bookokrat'
 alias split_term='kitty --directory $(pwd) --detach'
-alias fzfcd='cd $(find . -type d | fzf)'
+alias ..='cd ..'
 #manage trash cli
 alias rm='echo -e "!!!use trash-cli!!!\n(trsh)";false'
 alias trsh='trash-put'
-alias ..='cd ..'
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
