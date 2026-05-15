@@ -1,51 +1,121 @@
 {
 	"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
 	"logo": {
-		"type": "auto",
-		"source": "arch_small"
+		"type": "command-raw",
+		"source": "echo -e \"$(cat logo_unicode.txt)\""
 	},
 	"display": {
-		"separator": "  ",
-		"color": "white",
-		// colors: white, red, green, yellow, blue, magenta, cyan 
-		"constants": ["\u001b[37m", "\u001b[31m", "\u001b[32m", "\u001b[33m", "\u001b[34m", "\u001b[35m", "\u001b[36m"]
+		"separator": "│   ",
+		"key": {
+			"type": "both",
+			"paddingLeft": 5
+		}
 	},
 	"modules": [
 		{
-			"type": "custom",
-			"key": "╭────────────────────────────────────────╮"
+			"type": "title",
+			"format": "                             {user-name-colored}{at-symbol-colored}{host-name-colored}"
 		},
+		"break",
 		{
 			"type": "custom",
-			"key": "│{$2} My hyprland rice                    󰣇 {$1} │"
+			"format": "    ╭────────────────────┬── {#1}System Information{#1} ────────────────────────────╮"
 		},
 		{
-			"type": "command",
-			"key": "│{$3}   mem   ",
-			"text": "free -m | awk 'NR==2{printf \"%.2fGB / %.2fGB\",$3/1024,$2/1024}'",
-			"format": "{$3}{>27} {$1}│"
+			"type": "os",
+			"key": "OS                ",
+			"keyColor": "bright_red",
+			"outputColor": "bright_red"
 		},
 		{
-			"type": "command",
-			"key": "│{$4}   Disk (/) ",
-			"text": "~/.config/fastfetch/get_disk.sh | head -n 1",
-			"format": "{$4}{>24} {$1}│"
+			"type": "kernel",
+			"key": "Kernel            ",
+			"keyColor": "bright_yellow", 
+			"outputColor": "bright_yellow"
 		},
 		{
-			"type": "command",
-			"key": "│{$5}   Disk (/home) ",
-			"text": "~/.config/fastfetch/get_disk.sh | tail -n 1",
-			"format": "{$5}{>20} {$1}│"
+			"type": "uptime",
+			"key": "Uptime            ",
+			"keyColor": "bright_green", 
+			"outputColor": "bright_green"
 		},
 		{
 			"type": "packages",
-			"key": "│{$6}   pkgs  ",
-			"format": "{$6}{all>27} {$1}│"
+			"key": "Packages          ",
+			"keyColor": "bright_cyan", 
+			"outputColor": "bright_cyan"
+		},
+		{
+			"type": "shell",
+			"key": "Shell             ",
+			"keyColor": "bright_blue", 
+			"outputColor": "bright_blue"
+		},
+		{
+			"type": "wm",
+			"key": "WM                ",
+			"keyColor": "bright_magenta", 
+			"outputColor": "bright_magenta"
+		},
+		{
+			"type": "terminal",
+			"key": "Terminal          ",
+			"keyColor": "bright_red", 
+			"outputColor": "bright_red"
+		},
+		{
+			"type": "terminalfont",
+			"key": "Terminal Font     ",
+			"keyColor": "bright_yellow", 
+			"outputColor": "bright_yellow"
+		},
+		{
+			"type": "cpu",
+			"key": "CPU               ",
+			"keyColor": "bright_green", 
+			"outputColor": "bright_green"
+		},
+		{
+			"type": "gpu",
+			"key": "GPU               ",
+			"keyColor": "bright_cyan", 
+			"outputColor": "bright_cyan"
+		},
+		{
+			"type": "memory",
+			"key": "Memory            ",
+			"keyColor": "bright_blue", 
+			"outputColor": "bright_blue"
+		},
+		{
+			"type": "disk",
+			"folders": "/",
+			"key": "Disk (/)          ",
+			"keyColor": "bright_magenta",
+			"outputColor": "bright_magenta"
+		},
+		{
+			"type": "disk",
+			"folders": "/home",
+			"key": "Disk (/home)      ",
+			"keyColor": "bright_magenta",
+			"outputColor": "bright_magenta"
+		},
+		{
+			"type": "battery",
+			"key": "Battery           ",
+			"keyColor": "bright_red", 
+			"outputColor": "bright_red"
 		},
 		{
 			"type": "custom",
-			"key": "╰────────────────────────────────────────╯"
+			"format": "    ╰────────────────────┴──────────────────────────────────────────────────╯"
 		},
-		"break"
+		"break",
+		{
+			"type": "colors",
+			"paddingLeft": 30,
+			"symbol": "circle"
+		}
 	]
 }
