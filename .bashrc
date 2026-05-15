@@ -8,6 +8,7 @@ alias ll='eza -lh --group-directories-first'
 alias lla='eza -lha --group-directories-first'
 alias lls='eza -lh --total-size --group-directories-first'
 alias la='eza -a'
+alias smallfetch='fastfetch -c config_small'
 alias clr_logo='clear;fastfetch'
 alias clr_logo_dir='clear;fastfetch;eza -laih --total-size --group-directories-first;pwd'
 alias grep='grep --color=auto'
@@ -73,9 +74,9 @@ eval "$(thefuck --alias fk)"
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 
-if (($COLUMNS >= 62 && $LINES >= 15)); then
+if (($COLUMNS >= 80 && $LINES >= 15)); then
 	echo -ne "\033[31m"
 	figlet arch -f Sub-Zero
 	echo -ne "\033[0m"
-	fastfetch
+	smallfetch
 fi
