@@ -23,7 +23,7 @@ nnoremap <leader>gd :LspGotoDefinition<CR>
 nnoremap <leader>go :LspHover<CR>
 nnoremap <leader>gl :LspDiag current<CR>
 
-inoremap <Tab> <C-n>
+inoremap <A-Tab> <C-n>
 inoremap <S-Tab> <C-p>
 
 autocmd User LspSetup call LspOptionsSet(#{
