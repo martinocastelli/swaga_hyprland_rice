@@ -382,7 +382,7 @@ ShellRoot {
 					Text {
 						visible: dropboxActive
 						text: ""
-						color: root.colYellow
+						color: root.colGreen
 						font.pixelSize: root.fontSize
 						font.family: root.fontFamily
 						font.bold: true

@@ -31,7 +31,7 @@ vnoremap J :m '>+1<CR>gv=gv
 inoremap <C-c> <Esc>
 
 " remove visual mode keybinding
-noremap Q <nop>
+noremap Q <Nop>
 
 """ C
 " create c function body from prototype

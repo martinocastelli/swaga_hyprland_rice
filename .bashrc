@@ -10,7 +10,7 @@ alias lls='eza -lh --total-size --group-directories-first'
 alias la='eza -a'
 alias smallfetch='fastfetch -c config_small'
 alias clr_logo='clear;fastfetch'
-alias clr_logo_dir='clear;fastfetch;eza -laih --total-size --group-directories-first;pwd'
+alias clr_logo_dir='clear;fastfetch;eza -lih --group-directories-first;pwd'
 alias grep='grep --color=auto'
 alias tree='eza -lh --total-size --group-directories-first -T'
 alias matrix='neo-matrix -D --charset=ascii'
@@ -66,7 +66,7 @@ export MANPAGER='less'
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
 
-eval "$(atuin init bash --disable-up-arrow)"
+# eval "$(atuin init bash --disable-up-arrow)"
 
 eval "$(zoxide init --cmd cd bash)"
 

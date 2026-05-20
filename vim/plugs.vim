@@ -16,6 +16,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'yegappan/lsp'
 Plug 'cacharle/vim-syntax-extra'
+Plug 'glts/vim-magnum'
+Plug 'glts/vim-radical'
+Plug 'tpope/vim-repeat'
 
 call plug#end()
 
