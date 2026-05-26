@@ -27,15 +27,16 @@ nnoremap J :m +1<CR>
 vnoremap K :m '<-2<CR>gv=gv
 vnoremap J :m '>+1<CR>gv=gv
 
-" Make <C-c> behave like <Esc> in insert mode
-inoremap <C-c> <Esc>
+" Make kj behave like <Esc> in insert mode
+inoremap kj <Esc>
 
 " remove visual mode keybinding
 noremap Q <Nop>
 
 """ C
 " create c function body from prototype
-nnoremap gcf A<BS> {<CR>}<ESC>O
+nnoremap gch A<BS><BS>;<ESC>
+nnoremap gcf A<BS> {<CR>}<ESC>
 
 " closing and saving
 command W w
@@ -43,8 +44,8 @@ command Q q
 command WQ wq
 command Wq wq
 
-" to generate tags file for C and Cpp files
-autocmd BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
+" to generate tags file for C and Cpp files (not needed)
+" autocmd BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
 
 " removing arrow keys for movements
 nnoremap <left> <Nop>
