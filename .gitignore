@@ -3,3 +3,5 @@ tags
 *.png
 *.mp4
 *.jpg
+
+mpd/database

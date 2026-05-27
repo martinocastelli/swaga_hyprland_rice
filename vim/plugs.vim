@@ -19,6 +19,7 @@ Plug 'cacharle/vim-syntax-extra'
 Plug 'glts/vim-magnum'
 Plug 'glts/vim-radical'
 Plug 'tpope/vim-repeat'
+Plug 'ron-rs/ron.vim'
 
 call plug#end()
 
