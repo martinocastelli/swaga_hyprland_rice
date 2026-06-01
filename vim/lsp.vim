@@ -8,14 +8,19 @@ autocmd User LspSetup call LspAddServer([#{
 			\	  path: '/usr/bin/clangd',
 			\	  args: ['--background-index']
 			\ }])
-" autocmd User LspSetup call LspAddServer([#{name: 'bashls',
-" 			\   filetype: 'sh',
-" 			\   path: '/usr/bin/bash-language-server',
-" 			\   args: ['start']
-" 			\ }])
+autocmd User LspSetup call LspAddServer([#{name: 'bashls',
+			\   filetype: 'sh',
+			\   path: '/usr/bin/bash-language-server',
+			\   args: ['start']
+			\ }])
 autocmd User LspSetup call LspAddServer([#{name: 'pylsp',
 			\   filetype: 'python',
 			\   path: '/usr/bin/pylsp',
+			\   args: []
+			\ }])
+autocmd User LspSetup call LspAddServer([#{name: 'lua-language-server',
+			\   filetype: 'lua',
+			\   path: '/usr/bin/lua-language-server',
 			\   args: []
 			\ }])
 
