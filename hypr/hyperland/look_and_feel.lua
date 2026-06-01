@@ -1,77 +1,35 @@
-#####################
-### LOOK AND FEEL ###
-#####################
+hl.config({
+	general = {
+		gaps_in  = 0,
+		gaps_out = 0,
+		border_size = 1,
+		col = {
+			active_border   = { colors = {"rgb(33ccff)", "rgb(00ff99)"}, angle = 45 },
+			inactive_border = "rgb(595959)",
+		},
+		layout = "dwindle",
+	},
 
-# Refer to https://wiki.hypr.land/Configuring/Variables/
+	decoration = {
+		rounding       = 0,
+		rounding_power = 2,
 
-# https://wiki.hypr.land/Configuring/Variables/#general
-general {
-	# gaps_in = 2
-	# gaps_out = 10
-	gaps_in = 0
-	gaps_out = 0
+		-- Change transparency of focused and unfocused windows
+		active_opacity   = 1.0,
+		inactive_opacity = 1.0,
 
-	border_size = 1
+		shadow = {
+			enabled      = false,
+		},
 
-	# https://wiki.hypr.land/Configuring/Variables/#variable-types for info about colors
-	col.active_border = rgb(33ccff) rgb(00ff99) 45deg
-	col.inactive_border = rgb(595959)
-
-	# Set to true enable resizing windows by clicking and dragging on borders and gaps
-	resize_on_border = false
-
-	# Please see https://wiki.hypr.land/Configuring/Tearing/ before you turn this on
-	allow_tearing = false
-
-	layout = dwindle
-}
-
-# https://wiki.hypr.land/Configuring/Variables/#decoration
-decoration {
-	rounding = 0
-	rounding_power = 2
-
-	# Change transparency of focused and unfocused windows
-	active_opacity = 1.0
-	inactive_opacity = 1.0
-
-	shadow {
-		enabled = false
-		# range = 4
-		# render_power = 3
-		# color = rgba(1a1a1aee)
-	}
-
-	# https://wiki.hypr.land/Configuring/Variables/#blur
-	blur {
-		enabled = true
-		size = 3
-		passes = 1
-
-		vibrancy = 0.1696
-	}
-}
-
-# See https://wiki.hypr.land/Configuring/Dwindle-Layout/ for more
-dwindle {
-	preserve_split = true # You probably want this
-}
-
-# See https://wiki.hypr.land/Configuring/Master-Layout/ for more
-master {
-	new_status = master
-}
-
-scrolling {
-	direction = left
-	fullscreen_on_one_column = true
-	column_width = 1 
-}
-
-# https://wiki.hypr.land/Configuring/Variables/#misc
-misc {
-	force_default_wallpaper = -1 # Set to 0 or 1 to disable the anime mascot wallpapers
-	disable_hyprland_logo = false # If true disables the random hyprland logo / anime girl background. :(
-	disable_splash_rendering = true
-}
-
+		blur = {
+			enabled   = false,
+		},
+	},
+	animations = {
+		enabled = true,
+	},
+	dwindle = {
+		preserve_split = true, -- You probably want this
+	},
+})

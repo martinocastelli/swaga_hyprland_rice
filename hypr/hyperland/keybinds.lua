@@ -6,10 +6,15 @@ hl.bind("SUPER + q", hl.dsp.window.close())
 hl.bind("SUPER + ALT + space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + t", hl.dsp.layout("togglesplit"))    -- dwindle only
 
-hl.bind("SUPER + h",  hl.dsp.focus({ direction = "left" }))
+hl.bind("SUPER + h", hl.dsp.focus({ direction = "left" }))
 hl.bind("SUPER + l", hl.dsp.focus({ direction = "right" }))
-hl.bind("SUPER + k",    hl.dsp.focus({ direction = "up" }))
-hl.bind("SUPER + j",  hl.dsp.focus({ direction = "down" }))
+hl.bind("SUPER + k", hl.dsp.focus({ direction = "up" }))
+hl.bind("SUPER + j", hl.dsp.focus({ direction = "down" }))
+
+hl.bind("SUPER + SHIFT + h",  hl.dsp.window.move({ direction = "left" }))
+hl.bind("SUPER + SHIFT + l",  hl.dsp.window.move({ direction = "right" }))
+hl.bind("SUPER + SHIFT + k",  hl.dsp.window.move({ direction = "up" }))
+hl.bind("SUPER + SHIFT + j",  hl.dsp.window.move({ direction = "down" }))
 
 for i = 1, 9 do
 	hl.bind("SUPER + " .. i, hl.dsp.focus({ workspace = i}))
@@ -28,7 +33,6 @@ hl.bind("SUPER + y", hl.dsp.window.drag(),   { mouse = true })
 hl.bind("SUPER + x", hl.dsp.window.resize(), { mouse = true })
 hl.bind("SUPER + f", hl.dsp.window.fullscreen({action = "toggle"}))
 
-
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),      { locked = true, repeating = true })
@@ -42,3 +46,4 @@ hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = tr
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+

@@ -1,29 +1,19 @@
-#############
-### INPUT ###
-#############
-
-# https://wiki.hypr.land/Configuring/Variables/#input
-input {
-	kb_layout = ch
-
-	follow_mouse = 1
-
-	sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
-
-	touchpad {
-		natural_scroll = false
-	}
-	repeat_rate = 30
-	repeat_delay = 200
-}
-
-# See https://wiki.hypr.land/Configuring/Gestures
-gesture = 3, horizontal, workspace
-
-# Example per-device config
-# See https://wiki.hypr.land/Configuring/Keywords/#per-device-input-configs for more
-device {
-	name = epic-mouse-v1
-	sensitivity = -0.5
-}
+hl.config({
+	input = {
+		kb_layout  = "ch",
+		follow_mouse = 1,
+		touchpad = {
+			natural_scroll = true,
+		},
+	},
+	misc = {
+		force_default_wallpaper = -1,
+		disable_hyprland_logo   = false,
+	},
+})
+hl.gesture({
+	fingers = 3,
+	direction = "horizontal",
+	action = "workspace"
+})
 
