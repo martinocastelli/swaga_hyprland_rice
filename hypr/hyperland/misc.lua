@@ -5,6 +5,8 @@ hl.config({
 		touchpad = {
 			natural_scroll = true,
 		},
+		repeat_rate = 30,
+		repeat_delay = 200,
 	},
 	misc = {
 		force_default_wallpaper = -1,

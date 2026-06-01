@@ -1,9 +1,3 @@
-
--- workspace = r[1-3],monitor:eDP-1
--- workspace = r[4-6],monitor:DP-1
--- workspace = s[true], gapsout:10, gapsin:0
--- windowrule = match:workspace s[true], match:focus true, border_color rgb(cc0055)
-
 hl.window_rule({
 	-- Ignore maximize requests from all apps. You'll probably like this.
 	name  = "suppress-maximize-events",
@@ -38,6 +32,9 @@ hl.window_rule({
 
 hl.window_rule({
 	match = { workspace = "special:magic"},
-
-	border_size = 10,
+	border_color = "rgb(cc0055)",
+})
+hl.workspace_rule({
+	workspace = "s[true]",
+	gaps_out = 10
 })

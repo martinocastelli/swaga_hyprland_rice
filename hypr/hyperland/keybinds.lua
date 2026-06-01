@@ -1,6 +1,3 @@
--- bind = , Print, exec, hyprcap -n -z -c -t 2000 -o ~/Pictures/Screenshots/ shot region
--- bind = SUPER, Print, exec, hyprcap -n -c -t 2000 -o ~/Pictures/Screenshots/ shot monitor:active
--- bind = SUPER+shift, R, exec, hyprcap -n -c -t 2000 -o ~/Video/Captures rec monitor:active
 
 hl.bind("SUPER + q", hl.dsp.window.close())
 hl.bind("SUPER + ALT + space", hl.dsp.window.float({ action = "toggle" }))
