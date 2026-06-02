@@ -1,5 +1,6 @@
-
 hl.bind("SUPER + q", hl.dsp.window.close())
+hl.bind("SUPER + SHIFT + q", hl.dsp.window.kill())
+
 hl.bind("SUPER + ALT + space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + t", hl.dsp.layout("togglesplit"))    -- dwindle only
 

@@ -23,6 +23,8 @@ alias ..='cd ..'
 #manage trash cli
 alias rm='echo -e "!!!use trash-cli!!!\n(trsh)";false'
 alias trsh='trash-put'
+# please as sudo !! alias
+alias please='sudo $(fc -ln -1)'
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -45,6 +47,7 @@ export VISUAL=vim
 export TERMINAL=kitty
 export XDG_HOME=/home/martino
 export XDG_CONFIG_HOME=/home/martino/.config
+export SUDO_PROMPT="$(tput setaf 4 bold)[sudo]$(tput sgr0) $(tput setaf 6)password for$(tput sgr0) $(tput setaf 5)%p$(tput sgr0): "
 
 # https://gist.github.com/bahamas10/542875bb47990933638d2b7dfaa501bf
 export LESS_TERMCAP_mb=$'\e[1;31m'
