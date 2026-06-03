@@ -20,6 +20,7 @@ for i = 1, 9 do
 end
 hl.bind("SUPER + CTRL + h", hl.dsp.focus({ workspace = "-1"}))
 hl.bind("SUPER + CTRL + l", hl.dsp.focus({ workspace = "+1"}))
+hl.bind("SUPER + tab", hl.dsp.focus({ workspace = "e+1" }))
 
 hl.bind("SUPER + CTRL + SHIFT + h", hl.dsp.window.move({ workspace = "-1"}))
 hl.bind("SUPER + CTRL + SHIFT + l", hl.dsp.window.move({ workspace = "+1"}))
