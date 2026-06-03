@@ -1,0 +1,9 @@
+
+format = "$username$directory$cmd_duration$line_break$character"
+
+add_newline = false
+
+[directory]
+truncation_length = 2
+truncate_to_repo = false
+truncation_symbol = '…/'

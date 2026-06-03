@@ -40,6 +40,7 @@ function nonzero_return() {
 }
 
 PS1="\[\e[31m\]\`nonzero_return\`\[\e[34m\]\W\[\e[m\]\[\e[35m\]\\$\[\e[m\] "
+eval "$(starship init bash)"
 
 # set the env vars
 export EDITOR=vim
