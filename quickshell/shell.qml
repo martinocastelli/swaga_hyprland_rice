@@ -292,7 +292,7 @@ ShellRoot {
 					spacing: 0
 					Item { width: 8 }
 					Text {
-						text: "󰣇"
+						text: "󰣇 "
 						color: root.colBlue
 						font.pixelSize: root.fontSize + 10
 						font.family: root.family
