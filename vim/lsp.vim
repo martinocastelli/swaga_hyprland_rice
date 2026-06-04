@@ -23,6 +23,11 @@ autocmd User LspSetup call LspAddServer([#{name: 'lua-language-server',
 			\   path: '/usr/bin/lua-language-server',
 			\   args: []
 			\ }])
+autocmd User LspSetup call LspAddServer([#{name: 'texlab',
+			\   filetype: 'tex',
+			\   path: '/usr/bin/texlab',
+			\   args: []
+			\ }])
 
 nnoremap <leader>gd :LspGotoDefinition<CR>
 nnoremap <leader>go :LspHover<CR>
