@@ -37,6 +37,7 @@ ShellRoot {
 	property string currentLayout: "Tile"
 	property bool dropboxActive: false
 	property string connectedNetwork: "disconnected"
+	property bool isConnectedToNetwork: false
 	property int batteryLevel: 0
 	property bool batteryCharging: false
 
@@ -183,9 +184,11 @@ ShellRoot {
 			onRead: data => {
 				if (data && data.trim()) {
 					if (data != 'disc') {
+						isConnectedToNetwork = true
 						connectedNetwork = "  " + data.trim()
 					} else {
-						connectedNetwork = "󰖪  disconnected"
+						isConnectedToNetwork = false
+						connectedNetwork = ""
 					}
 				}
 			}
@@ -437,8 +440,8 @@ ShellRoot {
 					Item { width: 8 }
 					Rectangle { Layout.preferredWidth: 1; Layout.preferredHeight: 16;Layout.alignment: Qt.AlignVCenter;Layout.leftMargin: 0;Layout.rightMargin: 8;color: root.colMuted}
 					Text {
-						text: connectedNetwork
-						color: root.colRed
+						text: isConnectedToNetwork?connectedNetwork:"󰖪 Disconnected" 
+						color: isConnectedToNetwork?root.colGreen:root.colRed
 						font.pixelSize: root.fontSize
 						font.family: root.fontFamily
 						font.bold: true
