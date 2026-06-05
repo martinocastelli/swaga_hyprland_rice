@@ -1,0 +1,30 @@
+format = '[󰣇](blue) $username $directory $cmd_duration $status$line_break$character '
+
+add_newline = false
+
+[username]
+style_user = 'bold yellow'
+style_root = 'bold red'
+format = '[$user]($style)'
+disabled = false
+show_always = false
+
+[directory]
+format = '[$path]($style)[$read_only]($read_only_style)'
+truncation_length = 2
+truncate_to_repo = false
+
+[cmd_duration]
+min_time = 1000
+format = '[$duration](bold yellow)'
+
+[status]
+# format = '[Error: $int](bold red) '
+format = '[Error: $maybe_int$common_meaning$signal_name](bold red)'
+disabled = false
+
+[character]
+format = '[❯](bold blue)'
+success_symbol = '[❯](bold green) '
+error_symbol = '[❯](bold red) '
+

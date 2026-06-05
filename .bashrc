@@ -1,6 +1,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+alias t='true'
 alias v='vim'
 alias lg='lazygit'
 alias ls='eza'
@@ -40,6 +41,7 @@ function nonzero_return() {
 }
 
 PS1="\[\e[31m\]\`nonzero_return\`\[\e[34m\]\W\[\e[m\]\[\e[35m\]\\$\[\e[m\] "
+export STARSHIP_CONFIG=~/.config/starship/config.toml
 eval "$(starship init bash)"
 
 # set the env vars
