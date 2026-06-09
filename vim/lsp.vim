@@ -8,7 +8,14 @@ autocmd User LspSetup call LspAddServer([#{
 			\	  path: '/usr/bin/clangd',
 			\	  args: ['--background-index']
 			\ }])
-autocmd User LspSetup call LspAddServer([#{name: 'bashls',
+" autocmd User LspSetup call LspAddServer([#{
+" 			\	  name: 'arduino-language-server',
+" 			\	  filetype: ['arduino'],
+" 			\	  path: '/usr/bin/arduino-language-server',
+" 			\	  args: ['-clangd /usr/bin/clangd', '-cli /usr/sbin/arduino-cli', '-cli-config $HOME/.arduino15/arduino-cli.yaml', '-fqbn arduino:avr']
+" 			\ }])
+autocmd User LspSetup call LspAddServer([#{
+			\   name: 'bashls',
 			\   filetype: 'sh',
 			\   path: '/usr/bin/bash-language-server',
 			\   args: ['start']
