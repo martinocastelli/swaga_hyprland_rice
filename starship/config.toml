@@ -19,8 +19,8 @@ min_time = 1000
 format = '[$duration](bold yellow) '
 
 [status]
-# format = '[Error: $int](bold red) '
-format = '[Error: $maybe_int$common_meaning$signal_name](bold red) '
+format = '[Error: $int](bold red) '
+# format = '[Error: $maybe_int$common_meaning$signal_name](bold red) '
 disabled = false
 
 [character]
