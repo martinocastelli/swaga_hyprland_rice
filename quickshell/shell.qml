@@ -32,8 +32,11 @@ ShellRoot {
 	property int memUsage: 0
 	property int diskUsage: 0
 	property int volumeLevel: 0
+	property bool bluetooth: false
 	property int brightLevel: 0
-	property string activeWindow: "Window"
+	// property string activeWindow: "Window"
+	property string musicPlaying: ""
+	property string musicStatus: ""
 	property string currentLayout: "Tile"
 	property bool dropboxActive: false
 	property string connectedNetwork: "disconnected"
@@ -121,6 +124,18 @@ ShellRoot {
 		}
 		Component.onCompleted: running = true
 	}
+	Process {
+		id: bluetoothProc
+		command: ["sh", "-c", "echo bt $(bluetoothctl info > /dev/null && echo connected)"]
+		stdout: SplitParser {
+			onRead: data => {
+				if (data) {
+					bluetooth = data.trim() == "bt connected"
+				}
+			}
+		}
+		Component.onCompleted: running = true
+	}
 
 	// Brightness level
 	Process {
@@ -145,6 +160,31 @@ ShellRoot {
 			onRead: data => {
 				if (data && data.trim()) {
 					activeWindow = data.trim()
+				}
+			}
+		}
+		Component.onCompleted: running = true
+	}
+
+	Process {
+		id: musicProc1
+		command: ["sh", "-c", "echo $(playerctl metadata title) - $(playerctl metadata artist)"]
+		stdout: SplitParser {
+			onRead: data => {
+				if (data && data.trim()) {
+					musicPlaying = data.trim()
+				}
+			}
+		}
+		Component.onCompleted: running = true
+	}
+	Process {
+		id: musicProc2
+		command: ["sh", "-c", "playerctl status || echo stopped"]
+		stdout: SplitParser {
+			onRead: data => {
+				if (data && data.trim()) {
+					musicStatus = data.trim()
 				}
 			}
 		}
@@ -233,6 +273,9 @@ ShellRoot {
 			networkProc.running = true
 			batteryProc1.running = true
 			batteryProc2.running = true
+			musicProc1.running = true
+			musicProc2.running = true
+			bluetoothProc.running = true
 		}
 	}
 	Timer {
@@ -256,11 +299,11 @@ ShellRoot {
 
 	// Backup timer for window/layout (catches edge cases)
 	Timer {
-		interval: 200
+		interval: 2000
 		running: true
 		repeat: true
 		onTriggered: {
-			windowProc.running = true
+			// windowProc.running = true
 			layoutProc.running = true
 		}
 	}
@@ -371,8 +414,19 @@ ShellRoot {
 						Layout.rightMargin: 5
 					}
 					Rectangle { Layout.preferredWidth: 1; Layout.preferredHeight: 16;Layout.alignment: Qt.AlignVCenter;Layout.leftMargin: 0;Layout.rightMargin: 8;color: root.colMuted}
+					// Text {
+					// 	text: activeWindow
+					// 	color: root.colPurple
+					// 	font.pixelSize: root.fontSize
+					// 	font.family: root.fontFamily
+					// 	font.bold: true
+					// 	Layout.fillWidth: true
+					// 	Layout.leftMargin: 8
+					// 	elide: Text.ElideRight
+					// 	maximumLineCount: 1
+					// }
 					Text {
-						text: activeWindow
+						text: (musicStatus == "Playing" || musicStatus == "Paused")?(musicStatus=="Playing"?"󰐊 ":"󰏤 ") + musicPlaying:""
 						color: root.colPurple
 						font.pixelSize: root.fontSize
 						font.family: root.fontFamily
@@ -412,7 +466,7 @@ ShellRoot {
 					}
 					Rectangle { Layout.preferredWidth: 1; Layout.preferredHeight: 16;Layout.alignment: Qt.AlignVCenter;Layout.leftMargin: 0;Layout.rightMargin: 8;color: root.colMuted}
 					Text {
-						text: "Vol: " + volumeLevel + "%"
+						text: (bluetooth?"󰂯 ":"") + "Vol: " + volumeLevel + "%"
 						color: root.colPurple
 						font.pixelSize: root.fontSize
 						font.family: root.fontFamily
