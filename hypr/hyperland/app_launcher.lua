@@ -32,6 +32,6 @@ hl.bind("print", hl.dsp.exec_cmd("hyprcap -n -z -c -t 2000 -o ~/Pictures/Screens
 hl.bind("SUPER + print", hl.dsp.exec_cmd("hyprcap -n -z -c -t 2000 -o ~/Pictures/Screenshots/ shot monitor:active"))
 hl.bind("SUPER + SHIFT + r", hl.dsp.exec_cmd("hyprcap -n -z -c -t 2000 -o ~/Video/Captures rec monitor:active"))
 
-hl.bind("SUPER + ALT + l", hl.dsp.exec_cmd("hyprlock"))
+hl.bind("SUPER + MOD5 + l", hl.dsp.exec_cmd("hyprlock")) ---MOD5 = AltGr
 
 hl.bind("CTRL + ALT + p", hl.dsp.exec_cmd("shutdown now"))
