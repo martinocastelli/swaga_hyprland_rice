@@ -112,14 +112,13 @@ ShellRoot {
 	// Volume level (wpctl for PipeWire)
 	Process {
 		id: volProc
-		command: ["wpctl", "get-volume", "@DEFAULT_AUDIO_SINK@"]
+		command: ["sh", "-c", "pactl -f json get-sink-volume @DEFAULT_SINK@ | jq -r '.[\"volume\"].[].[\"value_percent\"]' | tr '\n' ' ' | tr -d %"]
 		stdout: SplitParser {
 			onRead: data => {
 				if (!data) return
-				var match = data.match(/Volume:\s*([\d.]+)/)
-				if (match) {
-					volumeLevel = Math.round(parseFloat(match[1]) * 100)
-				}
+				var left = parseInt(data.trim().split(" ")[0])
+				var right = parseInt(data.trim().split(" ")[1])
+				volumeLevel = (left + right) / 2
 			}
 		}
 		Component.onCompleted: running = true
