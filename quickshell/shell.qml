@@ -27,11 +27,12 @@ ShellRoot {
 	property int maxShowWorkspaces: 20
 
 	// System info properties
-	property string kernelVersion: "Linux"
+	// property string kernelVersion: "Linux"
 	property int cpuUsage: 0
 	property int memUsage: 0
 	property int diskUsage: 0
 	property int volumeLevel: 0
+	property bool volumeMuted: false
 	property bool bluetooth: false
 	property int brightLevel: 0
 	// property string activeWindow: "Window"
@@ -48,17 +49,17 @@ ShellRoot {
 	property var lastCpuIdle: 0
 	property var lastCpuTotal: 0
 
-	// Kernel version
-	Process {
-		id: kernelProc
-		command: ["uname", "-r"]
-		stdout: SplitParser {
-			onRead: data => {
-				if (data) kernelVersion = data.trim()
-			}
-		}
-		Component.onCompleted: running = true
-	}
+	// // Kernel version
+	// Process {
+	// 	id: kernelProc
+	// 	command: ["uname", "-r"]
+	// 	stdout: SplitParser {
+	// 		onRead: data => {
+	// 			if (data) kernelVersion = data.trim()
+	// 		}
+	// 	}
+	// 	Component.onCompleted: running = true
+	// }
 
 	// CPU usage
 	Process {
@@ -111,7 +112,8 @@ ShellRoot {
 
 	// Volume level (wpctl for PipeWire)
 	Process {
-		id: volProc
+		id: volProc1
+		// command: ["sh", "-c", "[ $(pactl -f json get-sink-mute @DEFAULT_SINK@ | jq '.mute') == \"true\" ] && echo '0 0' || pactl -f json get-sink-volume @DEFAULT_SINK@ | jq -r '.[\"volume\"].[].[\"value_percent\"]' | tr '\n' ' ' | tr -d %"]
 		command: ["sh", "-c", "pactl -f json get-sink-volume @DEFAULT_SINK@ | jq -r '.[\"volume\"].[].[\"value_percent\"]' | tr '\n' ' ' | tr -d %"]
 		stdout: SplitParser {
 			onRead: data => {
@@ -119,6 +121,17 @@ ShellRoot {
 				var left = parseInt(data.trim().split(" ")[0])
 				var right = parseInt(data.trim().split(" ")[1])
 				volumeLevel = (left + right) / 2
+			}
+		}
+		Component.onCompleted: running = true
+	}
+	Process {
+		id: volProc2
+		command: ["sh", "-c", "pactl -f json get-sink-mute @DEFAULT_SINK@ | jq '.mute'"]
+		stdout: SplitParser {
+			onRead: data => {
+				if (!data) return
+				volumeMuted = data.trim() == "true"
 			}
 		}
 		Component.onCompleted: running = true
@@ -275,6 +288,7 @@ ShellRoot {
 			musicProc1.running = true
 			musicProc2.running = true
 			bluetoothProc.running = true
+			volProc2.running = true
 		}
 	}
 	Timer {
@@ -282,7 +296,7 @@ ShellRoot {
 		running: true
 		repeat: true
 		onTriggered: {
-			volProc.running = true
+			volProc1.running = true
 			brightProc.running = true
 		}
 	}
@@ -465,7 +479,8 @@ ShellRoot {
 					}
 					Rectangle { Layout.preferredWidth: 1; Layout.preferredHeight: 16;Layout.alignment: Qt.AlignVCenter;Layout.leftMargin: 0;Layout.rightMargin: 8;color: root.colMuted}
 					Text {
-						text: (bluetooth?"󰂯 ":"") + "Vol: " + volumeLevel + "%"
+						// text: (bluetooth?"󰂯 ":"") + (volumeMuted == true?"󰖁":((volumeLevel > 0?(volumeLevel <= 33?"󰕿":"󰖀"):"󰕾") + ": " + volumeLevel + "%"))
+						text: (bluetooth?"󰂯 ":"") + (volumeMuted == true?"󰖁":"Vol: " + volumeLevel + "%")
 						color: root.colPurple
 						font.pixelSize: root.fontSize
 						font.family: root.fontFamily
