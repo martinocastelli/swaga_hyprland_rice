@@ -20,7 +20,7 @@ hl.bind("CTRL + ALT + escape", hl.dsp.exec_cmd(activityManager, {float = true, s
 hl.bind("SUPER + m", hl.dsp.exec_cmd(music, {float = true, size = { 1820, 1100},center = true}))
 hl.bind("SUPER + b", hl.dsp.exec_cmd(bluetooth, {float = true, size = { 1000, 600},center = true}))
 hl.bind("SUPER + ALT + w", hl.dsp.exec_cmd(wifi, {float = true, size = { 1000, 600},center = true}))
-hl.bind("SUPER + SHIFT + w", hl.dsp.exec_cmd(wallpaper_changer, {float = true, size = { 400, 450},move = {10, 40}}))
+hl.bind("SUPER + SHIFT + w", hl.dsp.exec_cmd(wallpaper_changer, {float = true, size = { 900, 450},move = {10, 40}}))
 
 hl.bind("CTRL + ALT + r", hl.dsp.exec_cmd("~/.config/quickshell/reload_qs.sh"))
 
