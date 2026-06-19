@@ -25,8 +25,6 @@ alias ..='cd ..'
 #manage trash cli
 alias rm='echo -e "!!!use trash-cli!!!\n(trsh)";false'
 alias trsh='trash-put'
-# please as sudo !! alias
-alias please='sudo $(fc -ln -1)'
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -72,8 +70,6 @@ export MANPAGER='less'
 
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
-
-# eval "$(atuin init bash --disable-up-arrow)"
 
 eval "$(zoxide init --cmd cd bash)"
 
