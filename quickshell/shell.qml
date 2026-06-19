@@ -165,18 +165,18 @@ ShellRoot {
 	}
 
 	// Active window title
-	Process {
-		id: windowProc
-		command: ["sh", "-c", "hyprctl activewindow -j | jq -r '.title // empty'"]
-		stdout: SplitParser {
-			onRead: data => {
-				if (data && data.trim()) {
-					activeWindow = data.trim()
-				}
-			}
-		}
-		Component.onCompleted: running = true
-	}
+	// Process {
+	// 	id: windowProc
+	// 	command: ["sh", "-c", "hyprctl activewindow -j | jq -r '.title // empty'"]
+	// 	stdout: SplitParser {
+	// 		onRead: data => {
+	// 			if (data && data.trim()) {
+	// 				activeWindow = data.trim()
+	// 			}
+	// 		}
+	// 	}
+	// 	Component.onCompleted: running = true
+	// }
 
 	Process {
 		id: musicProc1
@@ -305,7 +305,7 @@ ShellRoot {
 	Connections {
 		target: Hyprland
 		function onRawEvent(event) {
-			windowProc.running = true
+			// windowProc.running = true
 			layoutProc.running = true
 		}
 	}
@@ -358,7 +358,7 @@ ShellRoot {
 						font.bold: true
 						MouseArea {
 							anchors.fill: parent
-							onClicked: Hyprland.dispatch("exec wofi --show drun")
+							onClicked: Hyprland.dispatch("hl.dsp.exec_cmd(\"wofi --show drun\")")
 						}
 					}
 					Item { width: 8 }
@@ -390,7 +390,7 @@ ShellRoot {
 							}
 							MouseArea {
 								anchors.fill: parent
-								onClicked: Hyprland.dispatch("workspace " + (index + 1))
+								onClicked: Hyprland.dispatch("hl.dsp.focus({ workspace = \"" + (index + 1) + "\"})")
 							}
 						}
 					}
@@ -516,7 +516,7 @@ ShellRoot {
 						Layout.rightMargin: 8
 						MouseArea {
 							anchors.fill: parent
-							onClicked: Hyprland.dispatch("exec [float;center;size 700 500] kitty iwctl")
+							onClicked: Hyprland.dispatch("hl.dsp.exec_cmd(\"kitty impala\", {float = true, size = { 1000, 600},center = true})")
 						}
 					}
 					Rectangle { Layout.preferredWidth: 1; Layout.preferredHeight: 16;Layout.alignment: Qt.AlignVCenter;Layout.leftMargin: 0;Layout.rightMargin: 8;color: root.colMuted}
