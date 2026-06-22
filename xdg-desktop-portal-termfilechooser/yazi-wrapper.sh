@@ -17,7 +17,7 @@ if [ "$debug" = 1 ]; then
 fi
 
 cmd="yazi"
-termcmd="${TERMCMD:-kitty --title 'termfilechooser'}"
+termcmd="kitty"
 
 if [ "$save" = "1" ]; then
     # save a file
