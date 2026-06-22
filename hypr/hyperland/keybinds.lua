@@ -16,14 +16,14 @@ hl.bind("SUPER + SHIFT + j",  hl.dsp.window.move({ direction = "down" }))
 
 for i = 1, 9 do
 	hl.bind("SUPER + " .. i, hl.dsp.focus({ workspace = i}))
-	hl.bind("SUPER + MOD5 + " .. i, hl.dsp.window.move({ workspace = i })) --- MOD5 = AltGr
+	hl.bind("SUPER + MOD5 + " .. i, hl.dsp.window.move({ workspace = i, follow = false})) --- MOD5 = AltGr
 end
 hl.bind("SUPER + CTRL + h", hl.dsp.focus({ workspace = "-1"}))
 hl.bind("SUPER + CTRL + l", hl.dsp.focus({ workspace = "+1"}))
 hl.bind("SUPER + tab", hl.dsp.focus({ last = true }))
 
-hl.bind("SUPER + ALT + h", hl.dsp.window.move({ workspace = "-1"}))
-hl.bind("SUPER + ALT + l", hl.dsp.window.move({ workspace = "+1"}))
+hl.bind("SUPER + ALT + h", hl.dsp.window.move({ workspace = "-1", follow = true}))
+hl.bind("SUPER + ALT + l", hl.dsp.window.move({ workspace = "+1", follow = true}))
 
 hl.bind("SUPER + S",         hl.dsp.workspace.toggle_special("magic"))
 hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
