@@ -16,7 +16,9 @@ if command -v eza > /dev/null 2>&1; then
 	alias tree='eza -lh --icons -T'
 fi
 if command -v fastfetch > /dev/null 2>&1; then
-	alias smallfetch='fastfetch -c config_small'
+	if fastfetch -c config_small > /dev/null 2>&1; then
+		alias smallfetch='fastfetch -c config_small'
+	fi
 	alias clr_logo='clear;fastfetch'
 	alias clr_logo_dir='clear;fastfetch;eza -lih --group-directories-first;pwd'
 fi
