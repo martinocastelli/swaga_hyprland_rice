@@ -37,8 +37,8 @@ fi
 alias ..='cd ..'
 #manage trash cli
 if command -v trash > /dev/null 2>&1; then
-alias rm='echo -e "!!!use trash-cli!!!\n(trsh)";false'
-alias trsh='trash-put'
+	alias rm='echo -e "!!!use trash-cli!!!\n(trsh)";false'
+	alias trsh='trash-put'
 fi
 
 if command -v yazi > /dev/null 2>&1; then
@@ -88,15 +88,15 @@ export GROFF_NO_SGR=1
 export MANPAGER='less'
 
 # Set up fzf key bindings and fuzzy completion
-if command -v starship > /dev/null 2>&1; then
+if command -v fzf > /dev/null 2>&1; then
 	eval "$(fzf --bash)"
 fi
 
-if command -v starship > /dev/null 2>&1; then
+if command -v zoxide > /dev/null 2>&1; then
 	eval "$(zoxide init --cmd cd bash)"
 fi
 
-if command -v starship > /dev/null 2>&1; then
+if command -v thefuck > /dev/null 2>&1; then
 	eval "$(thefuck --alias fk)"
 fi
 
