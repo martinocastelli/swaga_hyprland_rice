@@ -10,7 +10,7 @@ if command -v eza > /dev/null 2>&1; then
 	alias ls='eza'
 	alias ll='eza -lh --icons --group-directories-first'
 	alias lla='eza -lha --icons --group-directories-first'
-	alias lls='eza -lh --icons --total-size --group-directories-first'
+	alias lls='eza -lh --icons --total-size --sort=size'
 	alias lli='eza -lhaH --total-size --group-directories-first --time-style=long-iso --time=accessed --git'
 	alias la='eza -a'
 	alias tree='eza -lh --icons -T'

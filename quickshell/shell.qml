@@ -448,6 +448,11 @@ ShellRoot {
 						Layout.leftMargin: 8
 						elide: Text.ElideRight
 						maximumLineCount: 1
+						MouseArea {
+							anchors.fill: parent
+							onClicked: Hyprland.dispatch("hl.dsp.exec_cmd(\"playerctl play-pause\")")
+						}
+
 					}
 					Text {
 						visible: dropboxActive
