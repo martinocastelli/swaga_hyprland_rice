@@ -23,6 +23,9 @@ open = [
 pdf = [
 	{ run = "zathura %s", orphan = true},
 ]
+edit_pdf = [
+	{ run = "pdfslicer %s", orphan = true},
+]
 zen = [
 	{ run = "zen-browser %s", orphan = true},
 ]
@@ -47,7 +50,7 @@ rules = [
 	# Media
 	{ mime = "{audio,video}/*", use = [ "video", "zen", "open" ] },
 	# Pdf
-	{ mime = "*/pdf", use = [ "pdf", "zen", "open" ] },
+	{ mime = "*/pdf", use = [ "pdf", "zen", "edit_pdf", "open" ] },
 	# Archive
 	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract" ] },
 	# JSON

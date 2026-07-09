@@ -6,9 +6,8 @@
 
 keymap = [
 	{ on = "<Esc>", run = "escape",             desc = "Exit visual mode, clear selection, or cancel search" },
-	{ on = "<C-[>", run = "escape",             desc = "Exit visual mode, clear selection, or cancel search" },
-	{ on = "q",     run = "quit",               desc = "Quit the process" },
-	{ on = "Q",     run = "quit --no-cwd-file", desc = "Quit without outputting cwd-file" },
+	{ on = "Q",     run = "quit",               desc = "Quit the process" },
+	{ on = "C-q",   run = "quit --no-cwd-file", desc = "Quit without outputting cwd-file" },
 	{ on = "<C-c>", run = "close",              desc = "Close the current tab, or quit if it's last" },
 	{ on = "<C-z>", run = "suspend",            desc = "Suspend the process" },
 
@@ -249,8 +248,8 @@ keymap = [
 	# Character-wise movement
 	{ on = "h",       run = "move -1", desc = "Move back a character" },
 	{ on = "l",       run = "move 1",  desc = "Move forward a character" },
-	# { on = "<Left>",  run = "move -1", desc = "Move back a character" },
-	# { on = "<Right>", run = "move 1",  desc = "Move forward a character" },
+	{ on = "<Left>",  run = "move -1", desc = "Move back a character" },
+	{ on = "<Right>", run = "move 1",  desc = "Move forward a character" },
 	# { on = "<C-b>",   run = "move -1", desc = "Move back a character" },
 	# { on = "<C-f>",   run = "move 1",  desc = "Move forward a character" },
 
