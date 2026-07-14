@@ -112,5 +112,9 @@ if (($COLUMNS >= 80 && $LINES >= 15)); then
 	fi
 	if command -v smallfetch > /dev/null 2>&1; then
 		smallfetch
+	else
+		if command -v fastfetch > /dev/null 2>&1; then
+			fastfetch
+		fi
 	fi
 fi
