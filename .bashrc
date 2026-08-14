@@ -23,8 +23,8 @@ if command -v fastfetch > /dev/null 2>&1; then
 	alias clr_logo_dir='clear;fastfetch;eza -lih --group-directories-first;pwd'
 fi
 alias grep='grep --color=auto'
-if command -v fastfetch > /dev/null 2>&1; then
-	alias matrix='neo-matrix -D --charset=ascii'
+if command -v neo-matrix > /dev/null 2>&1; then
+	alias matrix='neo-matrix -D'
 fi 
 if command -v pfetch > /dev/null 2>&1; then
 	alias minilogo='env PF_INFO="ascii" pfetch'
@@ -100,6 +100,10 @@ fi
 
 if command -v thefuck > /dev/null 2>&1; then
 	eval "$(thefuck --alias fk)"
+fi
+
+if command -v tdl > /dev/null 2>&1; then
+	source <(tdl completion bash)
 fi
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh

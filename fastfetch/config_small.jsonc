@@ -9,7 +9,8 @@
 		"key": {
 			"type": "both",
 			"paddingLeft": 1
-		}
+		},
+		"disableLinewrap": true
 	},
 	"modules": [
 		{
