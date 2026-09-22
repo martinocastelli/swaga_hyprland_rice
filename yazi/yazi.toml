@@ -26,8 +26,8 @@ pdf = [
 edit_pdf = [
 	{ run = "pdfslicer %s", orphan = true},
 ]
-zen = [
-	{ run = "zen-browser %s", orphan = true},
+browser = [
+	{ run = "librewolf %s", orphan = true},
 ]
 image = [
 	{ run = "feh %s", desc = "Reveal", orphan = true },
@@ -44,22 +44,22 @@ rules = [
 	# Folder
 	{ url = "/*", use = [ ] },
 	# Text
-	{ mime = "text/*", use = [ "edit", "zen", "open" ] },
+	{ mime = "text/*", use = [ "edit", "browser", "open" ] },
 	# Image
-	{ mime = "image/*", use = [ "image", "zen", "open"] },
+	{ mime = "image/*", use = [ "image", "browser", "open"] },
 	# Media
-	{ mime = "{audio,video}/*", use = [ "video", "zen", "open" ] },
+	{ mime = "{audio,video}/*", use = [ "video", "browser", "open" ] },
 	# Pdf
-	{ mime = "*/pdf", use = [ "pdf", "zen", "edit_pdf", "open" ] },
+	{ mime = "*/pdf", use = [ "pdf", "browser", "edit_pdf", "open" ] },
 	# Archive
 	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract" ] },
 	# JSON
-	{ mime = "application/{json,ndjson}", use = [ "edit", "zen", "open" ] },
-	{ mime = "*/javascript", use = [ "edit", "zen", "open" ] },
+	{ mime = "application/{json,ndjson}", use = [ "edit", "browser", "open" ] },
+	{ mime = "*/javascript", use = [ "edit", "browser", "open" ] },
 	# Empty file
-	{ mime = "inode/empty", use = [ "open", "edit", "zen" ] },
+	{ mime = "inode/empty", use = [ "open", "edit", "browser" ] },
 	# Virtual file system
-	{ mime = "vfs/{absent,stale}", use = ["download", "zen", "open"] },
+	{ mime = "vfs/{absent,stale}", use = ["download", "browser", "open"] },
 	# Fallback 
-	{ url = "*", use = [ "open", "edit", "zen" ] },
+	{ url = "*", use = [ "open", "edit", "browser" ] },
 ]
