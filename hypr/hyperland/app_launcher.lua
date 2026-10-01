@@ -9,6 +9,7 @@ local bluetooth = "kitty bluetui"
 local wifi = "kitty impala"
 local wallpaper_changer = "kitty change_wallpaper "
 local disk_mounter = "kitty mmtui"
+local calcolator = "kitty python"
 
 hl.bind("SUPER + return", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + ALT + return", hl.dsp.exec_cmd(terminal, {float = true, size = { 840, 500},center = true}))
@@ -25,6 +26,7 @@ hl.bind("SUPER + SHIFT + w", hl.dsp.exec_cmd(wallpaper_changer, {float = true, s
 hl.bind("SUPER + r", hl.dsp.exec_cmd("change_wallpaper -ri"))
 hl.bind("SUPER + ALT + r", hl.dsp.exec_cmd("change_wallpaper -ra"))
 hl.bind("SUPER + SHIFT + m", hl.dsp.exec_cmd(disk_mounter, {float = true, size = { 900, 450},center = true}))
+hl.bind("SUPER + c", hl.dsp.exec_cmd(calcolator, {float = true, size = { 900, 450},center = true}))
 
 hl.bind("CTRL + ALT + r", hl.dsp.exec_cmd("~/.config/quickshell/reload_qs.sh"))
 
