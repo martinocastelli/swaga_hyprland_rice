@@ -34,7 +34,7 @@ if command -v zen-browser > /dev/null 2>&1; then
 fi
 alias open='xdg-open'
 if command -v kitty > /dev/null 2>&1; then
-	alias split_term='kitty --directory $(pwd) --detach'
+	alias split_term='kitty --directory "$(pwd)" --detach'
 fi
 alias ..='cd ..'
 #manage trash cli
@@ -68,6 +68,7 @@ fi
 export EDITOR=vim
 export VISUAL=vim
 export TERMINAL=kitty
+alias icat='kitten icat --fit both'
 export XDG_HOME=/home/martino
 export XDG_CONFIG_HOME=/home/martino/.config
 export SUDO_PROMPT="$(tput setaf 4 bold)[sudo]$(tput sgr0) $(tput setaf 6)whats the magic word?$(tput sgr0) "

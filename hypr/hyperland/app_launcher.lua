@@ -1,15 +1,15 @@
 local terminal = "kitty"
 local launcher = "wofi --show drun"
-local fileManager = " kitty --hold yazi"
+local fileManager = " kitty yazi"
 local editor = "eclipse"
-local browser = "librewolf"
+local browser = "zen-browser"
 local activityManager = "kitty btop"
 local music = "spotify-launcher"
 local bluetooth = "kitty bluetui"
 local wifi = "kitty impala"
 local wallpaper_changer = "kitty change_wallpaper "
 local disk_mounter = "kitty mmtui"
-local calcolator = "kitty python"
+local calcolator = "kitty python -i -c 'from math import *'"
 
 hl.bind("SUPER + return", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + ALT + return", hl.dsp.exec_cmd(terminal, {float = true, size = { 840, 500},center = true}))

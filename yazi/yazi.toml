@@ -27,7 +27,7 @@ edit_pdf = [
 	{ run = "pdfslicer %s", orphan = true},
 ]
 browser = [
-	{ run = "librewolf %s", orphan = true},
+	{ run = "zen-browser %s", orphan = true},
 ]
 image = [
 	{ run = "feh %s", desc = "Reveal", orphan = true },
