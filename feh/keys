@@ -18,9 +18,9 @@
 next_img L Right space
 prev_img H Left BackSpace
 
-# and image movement
-scroll_up    j 
-scroll_down  k
+# and image movement (inverted)
+scroll_up    k 
+scroll_down  j
 scroll_left  h
 scroll_right l
 
