@@ -56,11 +56,8 @@ vnoremap <left> <Nop>
 vnoremap <right> <Nop>
 vnoremap <up> <Nop>
 vnoremap <down> <Nop>
-inoremap <left> <Nop>
-inoremap <right> <Nop>
-" for lsp completition
-" inoremap <down> <Nop>
-" inoremap <up> <Nop>
+" inoremap <left> <Nop>
+" inoremap <right> <Nop>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo
- cmap w!! w !sudo tee > /dev/null %
+cmap w!! w !sudo tee > /dev/null %

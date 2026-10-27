@@ -4,7 +4,7 @@ autocmd User LspSetup call LspOptionsSet(lspOpts)
 
 autocmd User LspSetup call LspAddServer([#{
 			\	  name: 'clang',
-			\	  filetype: ['c', 'cpp'],
+			\	  filetype: ['c'],
 			\	  path: '/usr/bin/clangd',
 			\	  args: ['--background-index']
 			\ }])

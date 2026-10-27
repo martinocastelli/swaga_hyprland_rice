@@ -15,8 +15,8 @@ keymap = [
 	{ on = "k", run = "arrow prev", desc = "Previous file" },
 	{ on = "j", run = "arrow next", desc = "Next file" },
 
-	# { on = "<Up>",   run = "arrow prev", desc = "Previous file" },
-	# { on = "<Down>", run = "arrow next", desc = "Next file" },
+	{ on = "<Up>",   run = "arrow prev", desc = "Previous file" },
+	{ on = "<Down>", run = "arrow next", desc = "Next file" },
 
 	{ on = "<C-u>", run = "arrow -50%",  desc = "Move cursor up half page" },
 	{ on = "<C-d>", run = "arrow 50%",   desc = "Move cursor down half page" },
@@ -35,8 +35,8 @@ keymap = [
 	{ on = "h", run = "leave", desc = "Back to the parent directory" },
 	{ on = "l", run = "enter", desc = "Enter the child directory" },
 
-	# { on = "<Left>",  run = "leave", desc = "Back to the parent directory" },
-	# { on = "<Right>", run = "enter", desc = "Enter the child directory" },
+	{ on = "<Left>",  run = "leave", desc = "Back to the parent directory" },
+	{ on = "<Right>", run = "enter", desc = "Enter the child directory" },
 
 	{ on = "H", run = "back",    desc = "Back to previous directory" },
 	{ on = "L", run = "forward", desc = "Forward to next directory" },
@@ -168,8 +168,8 @@ keymap = [
 	{ on = "k", run = "arrow prev", desc = "Previous task" },
 	{ on = "j", run = "arrow next", desc = "Next task" },
 
-	# { on = "<Up>",   run = "arrow prev", desc = "Previous task" },
-	# { on = "<Down>", run = "arrow next", desc = "Next task" },
+	{ on = "<Up>",   run = "arrow prev", desc = "Previous task" },
+	{ on = "<Down>", run = "arrow next", desc = "Next task" },
 
 	{ on = "<Enter>", run = "inspect", desc = "Inspect the task" },
 	{ on = "x",       run = "cancel",  desc = "Cancel the task" },
@@ -192,10 +192,10 @@ keymap = [
 	{ on = "h", run = "swipe prev", desc = "Swipe to previous file" },
 	{ on = "l", run = "swipe next", desc = "Swipe to next file" },
 
-	# { on = "<Up>",    run = "arrow prev", desc = "Previous line" },
-	# { on = "<Down>",  run = "arrow next", desc = "Next line" },
-	# { on = "<Left>",  run = "swipe prev", desc = "Swipe to previous file" },
-	# { on = "<Right>", run = "swipe next", desc = "Swipe to next file" },
+	{ on = "<Up>",    run = "arrow prev", desc = "Previous line" },
+	{ on = "<Down>",  run = "arrow next", desc = "Next line" },
+	{ on = "<Left>",  run = "swipe prev", desc = "Swipe to previous file" },
+	{ on = "<Right>", run = "swipe next", desc = "Swipe to next file" },
 
 	# Copy
 	{ on = [ "c", "c" ], run = "copy cell", desc = "Copy selected cell" },
@@ -216,8 +216,8 @@ keymap = [
 	{ on = "k", run = "arrow prev", desc = "Previous option" },
 	{ on = "j", run = "arrow next", desc = "Next option" },
 
-	# { on = "<Up>",   run = "arrow prev", desc = "Previous option" },
-	# { on = "<Down>", run = "arrow next", desc = "Next option" },
+	{ on = "<Up>",   run = "arrow prev", desc = "Previous option" },
+	{ on = "<Down>", run = "arrow next", desc = "Next option" },
 
 	# Help
 	{ on = "~",    run = "help", desc = "Open help" },
@@ -325,8 +325,8 @@ keymap = [
 	{ on = "k", run = "arrow prev", desc = "Previous line" },
 	{ on = "j", run = "arrow next", desc = "Next line" },
 
-	# { on = "<Up>",   run = "arrow prev", desc = "Previous line" },
-	# { on = "<Down>", run = "arrow next", desc = "Next line" },
+	{ on = "<Up>",   run = "arrow prev", desc = "Previous line" },
+	{ on = "<Down>", run = "arrow next", desc = "Next line" },
 
 	# Help
 	{ on = "~",    run = "help", desc = "Open help" },

@@ -4,11 +4,19 @@ hl.bind("SUPER + SHIFT + q", hl.dsp.window.kill())
 hl.bind("SUPER + ALT + space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + t", hl.dsp.layout("togglesplit"))    -- dwindle only
 
+hl.bind("SUPER + left", hl.dsp.focus({ direction = "left" }))
+hl.bind("SUPER + right", hl.dsp.focus({ direction = "right" }))
+hl.bind("SUPER + up", hl.dsp.focus({ direction = "up" }))
+hl.bind("SUPER + down", hl.dsp.focus({ direction = "down" }))
 hl.bind("SUPER + h", hl.dsp.focus({ direction = "left" }))
 hl.bind("SUPER + l", hl.dsp.focus({ direction = "right" }))
 hl.bind("SUPER + k", hl.dsp.focus({ direction = "up" }))
 hl.bind("SUPER + j", hl.dsp.focus({ direction = "down" }))
 
+hl.bind("SUPER + SHIFT + left",  hl.dsp.window.move({ direction = "left" }))
+hl.bind("SUPER + SHIFT + right",  hl.dsp.window.move({ direction = "right" }))
+hl.bind("SUPER + SHIFT + up",  hl.dsp.window.move({ direction = "up" }))
+hl.bind("SUPER + SHIFT + down",  hl.dsp.window.move({ direction = "down" }))
 hl.bind("SUPER + SHIFT + h",  hl.dsp.window.move({ direction = "left" }))
 hl.bind("SUPER + SHIFT + l",  hl.dsp.window.move({ direction = "right" }))
 hl.bind("SUPER + SHIFT + k",  hl.dsp.window.move({ direction = "up" }))
@@ -18,10 +26,14 @@ for i = 1, 9 do
 	hl.bind("SUPER + " .. i, hl.dsp.focus({ workspace = i}))
 	hl.bind("SUPER + MOD5 + " .. i, hl.dsp.window.move({ workspace = i, follow = false})) --- MOD5 = AltGr
 end
+hl.bind("SUPER + CTRL + left", hl.dsp.focus({ workspace = "-1"}))
+hl.bind("SUPER + CTRL + right", hl.dsp.focus({ workspace = "+1"}))
 hl.bind("SUPER + CTRL + h", hl.dsp.focus({ workspace = "-1"}))
 hl.bind("SUPER + CTRL + l", hl.dsp.focus({ workspace = "+1"}))
 hl.bind("SUPER + tab", hl.dsp.focus({ last = true }))
 
+hl.bind("SUPER + ALT + left", hl.dsp.window.move({ workspace = "-1", follow = true}))
+hl.bind("SUPER + ALT + right", hl.dsp.window.move({ workspace = "+1", follow = true}))
 hl.bind("SUPER + ALT + h", hl.dsp.window.move({ workspace = "-1", follow = true}))
 hl.bind("SUPER + ALT + l", hl.dsp.window.move({ workspace = "+1", follow = true}))
 
