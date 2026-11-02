@@ -157,6 +157,12 @@ keymap = [
 	# Help
 	{ on = "~",    run = "help", desc = "Open help" },
 	{ on = "<F1>", run = "help", desc = "Open help" },
+	
+	# trash
+	{ on = [ "g", "r" ], run = """
+		shell --block -- deleted="$(printf "\n" | trash-restore | head -n -1 | awk -v filter="^${PWD}/[^/]*$" '$4~filter {print $1, $4}')";
+		ids="$(echo "$deleted" | fzf --reverse --multi | cut -d' ' -f1 | tr '\n' ',')"; ids="${ids%,}"; echo "$ids" | exec trash-restore >/dev/null"""
+		, desc = "restore files for local folder" },
 ]
 
 [tasks]

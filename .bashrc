@@ -110,7 +110,7 @@ fi
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 
 if (($COLUMNS >= 80 && $LINES >= 15)); then
-	if figlet arch -f Sub-Zero > /dev/null 2>&1; then
+	if figlet a -f Sub-Zero > /dev/null 2>&1; then
 		echo -ne "\033[31m"
 		figlet arch -f Sub-Zero
 		echo -ne "\033[0m"
