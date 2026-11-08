@@ -1,5 +1,5 @@
 local terminal = "kitty"
-local launcher = "wofi --show drun"
+local launcher = "rofi -show drun"
 local fileManager = " kitty yazi"
 local editor = "eclipse"
 local browser = "zen-browser"
@@ -9,7 +9,8 @@ local bluetooth = "kitty bluetui"
 local wifi = "kitty impala"
 local wallpaper_changer = "kitty change_wallpaper "
 local disk_mounter = "kitty mmtui"
-local calcolator = "kitty python -i -c 'from math import *'"
+local calculator = "kitty python -i -c 'from math import *'"
+local pass = "proton-pass-rofi"
 
 hl.bind("SUPER + return", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + ALT + return", hl.dsp.exec_cmd(terminal, {float = true, size = { 840, 500},center = true}))
@@ -22,11 +23,12 @@ hl.bind("CTRL + ALT + escape", hl.dsp.exec_cmd(activityManager, {float = true, s
 hl.bind("SUPER + m", hl.dsp.exec_cmd(music, {float = true, size = { 1820, 1100},center = true}))
 hl.bind("SUPER + b", hl.dsp.exec_cmd(bluetooth, {float = true, size = { 1000, 600},center = true}))
 hl.bind("SUPER + ALT + w", hl.dsp.exec_cmd(wifi, {float = true, size = { 1000, 600},center = true}))
-hl.bind("SUPER + SHIFT + w", hl.dsp.exec_cmd(wallpaper_changer, {float = true, size = { 900, 450},move = {10, 40}}))
+hl.bind("SUPER + SHIFT + w", hl.dsp.exec_cmd(wallpaper_changer, {float = true, size = { 900, 500},move = {10, 40}}))
 hl.bind("SUPER + r", hl.dsp.exec_cmd("change_wallpaper -ri"))
 hl.bind("SUPER + ALT + r", hl.dsp.exec_cmd("change_wallpaper -ra"))
 hl.bind("SUPER + SHIFT + m", hl.dsp.exec_cmd(disk_mounter, {float = true, size = { 900, 450},center = true}))
-hl.bind("SUPER + c", hl.dsp.exec_cmd(calcolator, {float = true, size = { 900, 450},center = true}))
+hl.bind("SUPER + c", hl.dsp.exec_cmd(calculator, {float = true, size = { 900, 450},center = true}))
+hl.bind("SUPER + SHIFT + p", hl.dsp.exec_cmd(pass))
 
 hl.bind("CTRL + ALT + r", hl.dsp.exec_cmd("~/.config/quickshell/reload_qs.sh"))
 

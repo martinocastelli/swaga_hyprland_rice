@@ -8,12 +8,12 @@ autocmd User LspSetup call LspOptionsSet(lspOpts)
 " 			\	  path: '/usr/bin/clangd',
 " 			\	  args: ['--background-index']
 " 			\ }])
-autocmd User LspSetup call LspAddServer([#{
-			\   name: 'bashls',
-			\   filetype: 'sh',
-			\   path: '/usr/bin/bash-language-server',
-			\   args: ['start']
-			\ }])
+" autocmd User LspSetup call LspAddServer([#{
+" 			\   name: 'bashls',
+" 			\   filetype: 'sh',
+" 			\   path: '/usr/bin/bash-language-server',
+" 			\   args: ['start']
+" 			\ }])
 autocmd User LspSetup call LspAddServer([#{name: 'pylsp',
 			\   filetype: 'python',
 			\   path: '/usr/bin/pylsp',

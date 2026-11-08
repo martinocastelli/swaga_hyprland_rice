@@ -118,9 +118,14 @@ ShellRoot {
 		stdout: SplitParser {
 			onRead: data => {
 				if (!data) return
-				var left = parseInt(data.trim().split(" ")[0])
-				var right = parseInt(data.trim().split(" ")[1])
-				volumeLevel = (left + right) / 2
+				if (data.trim().split(" ").size > 1) {
+					var left = parseInt(data.trim().split(" ")[0])
+					var right = parseInt(data.trim().split(" ")[1])
+					volumeLevel = (left + right) / 2
+				} else {
+					volumeLevel = parseInt(data.trim())
+				}
+
 			}
 		}
 		Component.onCompleted: running = true
